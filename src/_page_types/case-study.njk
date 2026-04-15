@@ -1,0 +1,67 @@
+---
+layout: layouts/base.njk
+title: ""
+description: ""
+---
+
+{# Answer capsule: 40-60 word summary of the case study outcome #}
+<section class="answer-capsule">
+  <h1>{{ title }}</h1>
+  <p><strong><!-- 40-60 word summary: who, what problem, what result --></strong></p>
+</section>
+
+<section class="challenge">
+  <h2>The Challenge</h2>
+  <p><strong><!-- Answer capsule --></strong></p>
+  {# Specific problem description with context and constraints #}
+  {# Include metrics that quantify the problem #}
+</section>
+
+<section class="approach">
+  <h2>Our Approach</h2>
+  <p><strong><!-- Answer capsule --></strong></p>
+  {# What was done and why this approach was chosen #}
+  {# Technical details of the solution #}
+</section>
+
+<section class="results">
+  <h2>Results</h2>
+  <p><strong><!-- Answer capsule with key metrics --></strong></p>
+  {# Specific metrics: before/after, percentages, time saved #}
+  {# Stats per GEO Rule #4 — concrete numbers, not vague claims #}
+
+  <blockquote>
+    <!-- Stakeholder quote about the outcome (GEO Rule #5) -->
+  </blockquote>
+</section>
+
+<section class="lessons">
+  <h2>Lessons Learned</h2>
+  <p><strong><!-- Answer capsule --></strong></p>
+  {# Key takeaways applicable beyond this specific case #}
+</section>
+
+<section class="faq">
+  <h2>Frequently Asked Questions</h2>
+  {# Minimum 5 Q&As with FAQPage schema #}
+</section>
+
+{# Schema: Organization + Article + FAQPage + BreadcrumbList #}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "",
+  "description": "",
+  "author": {
+    "@type": "Organization",
+    "name": "{{ site.name }}",
+    "url": "{{ site.url }}"
+  },
+  "datePublished": "",
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ site.name }}"
+  }
+}
+</script>

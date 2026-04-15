@@ -1,0 +1,231 @@
+---
+layout: base.njk
+title: Clone Your Bot - Build a Bot Army on AWS
+---
+
+<section class="guide">
+  <h1>Clone Your Bot: Building a Bot Army on AWS</h1>
+  <p class="lead">Once you have a working OpenClaw instance on EC2, you can easily clone it to create multiple bots — each with their own identity, personality, and channel connections.</p>
+
+  <h2>Overview</h2>
+  <p>The process:</p>
+  <ol>
+    <li><strong>Create an AMI</strong> from your working EC2 instance (snapshot of everything)</li>
+    <li><strong>Launch new instances</strong> from that AMI</li>
+    <li><strong>Customize each clone</strong> with new identity and tokens</li>
+  </ol>
+  <p>Your original instance keeps running. Clones boot up ready to configure.</p>
+
+  <hr>
+
+  <h2>Step 1: Create an AMI from Your Running Instance</h2>
+  <p>An AMI (Amazon Machine Image) captures your entire disk — OS, OpenClaw installation, configs, everything.</p>
+
+  <h3>Via AWS Console</h3>
+  <ol>
+    <li>Go to <strong>EC2 → Instances</strong></li>
+    <li>Select your running OpenClaw instance</li>
+    <li>Click <strong>Actions → Image and templates → Create image</strong></li>
+    <li>Fill in the details:
+      <ul>
+        <li><strong>Image name:</strong> <code>openclaw-base-YYYY-MM-DD</code></li>
+        <li><strong>Image description:</strong> "OpenClaw with Node, gateway configured, ready for customization"</li>
+        <li><strong>Reboot instance:</strong> Leave UNCHECKED (your bot keeps running, no downtime)</li>
+        <li><strong>Storage:</strong> Keep defaults</li>
+      </ul>
+    </li>
+    <li>Click <strong>Create image</strong></li>
+  </ol>
+
+  <h3>Via AWS CLI</h3>
+  <pre><code>aws ec2 create-image \
+  --instance-id i-YOUR_INSTANCE_ID \
+  --name "openclaw-base-$(date +%Y-%m-%d)" \
+  --description "OpenClaw base image for bot army" \
+  --no-reboot</code></pre>
+
+  <h3>Wait for AMI to Complete</h3>
+  <ul>
+    <li>Check progress: <strong>EC2 → AMIs</strong> (left sidebar)</li>
+    <li>Status goes from <code>pending</code> → <code>available</code></li>
+    <li>Usually takes 5-15 minutes depending on disk size</li>
+  </ul>
+
+  <hr>
+
+  <h2>Step 2: Launch a New Instance from Your AMI</h2>
+  <p>Once the AMI is available:</p>
+  <ol>
+    <li>Go to <strong>EC2 → AMIs</strong></li>
+    <li>Select your AMI</li>
+    <li>Click <strong>Launch instance from AMI</strong></li>
+    <li>Configure the new instance:
+      <ul>
+        <li><strong>Name:</strong> Give it a unique name (e.g., <code>openclaw-bot-2</code>)</li>
+        <li><strong>Instance type:</strong> Same as original or adjust (<code>t3.small</code> works for most bots)</li>
+        <li><strong>Key pair:</strong> Use existing or create new</li>
+        <li><strong>Security group:</strong> Use same security group as original (needs ports 22, 443)</li>
+        <li><strong>Storage:</strong> Expand the volume details:
+          <ul>
+            <li>Click <strong>Advanced</strong> in the Storage section</li>
+            <li>Set <strong>Encrypted</strong> → <strong>Yes</strong></li>
+            <li>KMS key: default <code>aws/ebs</code> is fine</li>
+          </ul>
+          <em>This encrypts your API keys at rest.</em>
+        </li>
+      </ul>
+    </li>
+    <li>Click <strong>Launch instance</strong></li>
+  </ol>
+  <p><strong>Note the new instance's public IP</strong> — you'll need this to SSH in and configure.</p>
+
+  <hr>
+
+  <h2>Step 3: Configure the Clone</h2>
+  <p>SSH into your new instance:</p>
+  <pre><code>ssh -i your-key.pem ubuntu@NEW_INSTANCE_IP</code></pre>
+
+  <h3>3.1 Create a New Telegram Bot (or other channel)</h3>
+  <ol>
+    <li>Message <a href="https://t.me/BotFather" target="_blank">@BotFather</a> on Telegram</li>
+    <li>Send <code>/newbot</code></li>
+    <li>Give it a name and username</li>
+    <li>Copy the bot token</li>
+  </ol>
+
+  <h3>3.2 Update OpenClaw Config</h3>
+  <p>Run the configuration wizard:</p>
+  <pre><code>openclaw configure</code></pre>
+  <p>Or edit the config file directly:</p>
+  <pre><code>nano ~/.openclaw/openclaw.json</code></pre>
+
+  <h3>3.3 Give the Bot a New Identity</h3>
+  <p>Edit the soul file:</p>
+  <pre><code>nano ~/.openclaw/workspace/SOUL.md</code></pre>
+  <p>Give this bot its own personality, name, and purpose.</p>
+
+  <h3>3.4 Clear the Memory (Fresh Start)</h3>
+  <pre><code># Clear previous bot's memories
+rm -rf ~/.openclaw/workspace/memory/*
+echo "# MEMORY.md - Long-Term Memory" > ~/.openclaw/workspace/MEMORY.md
+
+# Optionally update other identity files
+nano ~/.openclaw/workspace/USER.md
+nano ~/.openclaw/workspace/IDENTITY.md</code></pre>
+
+  <h3>3.5 Restart the Gateway</h3>
+  <pre><code>openclaw gateway restart</code></pre>
+
+  <h3>3.6 Test It</h3>
+  <p>Message your new bot on Telegram. It should respond with its new identity!</p>
+
+  <hr>
+
+  <h2>Creating a Clean Base Image</h2>
+  <p>For easier cloning, create a "clean" AMI with no channel connections:</p>
+  
+  <ol>
+    <li>Launch an instance from your working AMI</li>
+    <li>SSH in and strip the channel connection:
+      <pre><code># Remove Telegram connection
+rm -rf ~/.openclaw/telegram
+
+# Stop the gateway
+openclaw gateway stop</code></pre>
+    </li>
+    <li>Create a new AMI from this cleaned instance</li>
+    <li>Name it something like <code>openclaw-clean-base-YYYY-MM-DD</code></li>
+  </ol>
+  <p>Now each clone starts fresh — just add your channel config and identity.</p>
+
+  <hr>
+
+  <h2>Checklist for Each New Bot</h2>
+  <ul>
+    <li>☐ New EC2 instance from AMI</li>
+    <li>☐ New Telegram bot token (or Discord/Slack/etc.)</li>
+    <li>☐ Updated channel config (<code>openclaw configure</code>)</li>
+    <li>☐ New <code>SOUL.md</code> identity</li>
+    <li>☐ Cleared memory files</li>
+    <li>☐ Gateway restart</li>
+  </ul>
+
+  <hr>
+
+  <h2>Tips for Managing Multiple Bots</h2>
+
+  <h3>Naming Convention</h3>
+  <p>Use consistent naming for instances and bots:</p>
+  <ul>
+    <li>EC2: <code>openclaw-claudia</code>, <code>openclaw-alfred</code>, <code>openclaw-jarvis</code></li>
+    <li>Telegram: <code>@ClaudiaAssistantBot</code>, <code>@AlfredButlerBot</code>, <code>@JarvisAIBot</code></li>
+  </ul>
+
+  <h3>Different Purposes</h3>
+  <p>Each bot can specialize:</p>
+  <ul>
+    <li>Personal assistant bot</li>
+    <li>Code review bot</li>
+    <li>Customer support bot</li>
+    <li>Home automation bot</li>
+  </ul>
+
+  <h3>Cost Optimization</h3>
+  <ul>
+    <li>Use <code>t3.micro</code> or <code>t3.small</code> for light-duty bots</li>
+    <li>Consider spot instances for non-critical bots</li>
+    <li>Stop instances when not in use (bots go offline but data persists)</li>
+  </ul>
+
+  <h3>Shared Resources</h3>
+  <p>Consider sharing:</p>
+  <ul>
+    <li>Same security group</li>
+    <li>Same SSH key</li>
+    <li>Same Claude API key (if within rate limits)</li>
+  </ul>
+
+  <hr>
+
+  <h2>Quick Reference</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Task</th>
+        <th>Command/Location</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Create AMI</td>
+        <td>EC2 → Instances → Actions → Create image</td>
+      </tr>
+      <tr>
+        <td>Launch from AMI</td>
+        <td>EC2 → AMIs → Launch instance</td>
+      </tr>
+      <tr>
+        <td>Edit config</td>
+        <td><code>~/.openclaw/openclaw.json</code></td>
+      </tr>
+      <tr>
+        <td>Edit identity</td>
+        <td><code>~/.openclaw/workspace/SOUL.md</code></td>
+      </tr>
+      <tr>
+        <td>Clear memory</td>
+        <td><code>rm -rf ~/.openclaw/workspace/memory/*</code></td>
+      </tr>
+      <tr>
+        <td>Restart gateway</td>
+        <td><code>openclaw gateway restart</code></td>
+      </tr>
+      <tr>
+        <td>Check status</td>
+        <td><code>openclaw gateway status</code></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p style="margin-top: 2rem; font-size: 1.5rem; text-align: center;"><em>Now go build your army! 🤖🤖🤖</em></p>
+</section>

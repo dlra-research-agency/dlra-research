@@ -1,0 +1,63 @@
+---
+layout: layouts/base.njk
+title: "About"
+description: ""
+---
+
+{# Answer capsule: 40-60 word summary of who this organization is #}
+<section class="answer-capsule">
+  <h1>{{ title }}</h1>
+  <p><strong><!-- 40-60 word company summary: what they do, why they exist --></strong></p>
+</section>
+
+<section class="mission">
+  <h2>Our Mission</h2>
+  <p><strong><!-- Answer capsule --></strong></p>
+  {# Mission statement with founding context #}
+</section>
+
+<section class="story">
+  <h2>Our Story</h2>
+  <p><strong><!-- Answer capsule --></strong></p>
+  {# Founding context, key milestones, evolution #}
+  {# Include specific dates and verifiable facts #}
+</section>
+
+<section class="expertise">
+  <h2>What We Do</h2>
+  <p><strong><!-- Answer capsule --></strong></p>
+  {# Core competencies, domains, capabilities #}
+  {# Link to product/service pages for detail #}
+</section>
+
+<section class="values">
+  <h2>Our Values</h2>
+  <p><strong><!-- Answer capsule --></strong></p>
+</section>
+
+<section class="faq">
+  <h2>Frequently Asked Questions</h2>
+  {# Minimum 5 Q&As with FAQPage schema #}
+</section>
+
+{# Schema: Organization with sameAs + FAQPage + BreadcrumbList #}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "{{ site.name }}",
+  "url": "{{ site.url }}",
+  "description": "",
+  "foundingDate": "",
+  "sameAs": [
+    "https://github.com/...",
+    "https://linkedin.com/company/...",
+    "https://twitter.com/..."
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "",
+    "contactType": "general"
+  }
+}
+</script>

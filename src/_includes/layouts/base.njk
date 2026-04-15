@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }} | {{ site.name }}</title>
+  <meta name="description" content="{{ description or site.description }}">
+
+  <!-- Theme color -->
+  <meta name="theme-color" content="#0f1629">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="{{ title }} | {{ site.name }}">
+  <meta property="og:description" content="{{ description or site.description }}">
+  <meta property="og:type" content="website">
+  {% if site.og_image %}
+  <meta property="og:image" content="{{ site.og_image }}">
+  {% endif %}
+
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  {% if site.ga4_measurement_id %}
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.ga4_measurement_id }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '{{ site.ga4_measurement_id }}');
+  </script>
+  {% endif %}
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a href="/" class="nav-logo">{{ site.name }}</a>
+      <ul class="nav-links">
+        <li class="dropdown">
+          <a href="/products/">Products <span class="dropdown-arrow">▾</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/products/threat-lens/">Threat Lens</a></li>
+            <li><a href="/products/maritime-nlp/">Maritime NLP</a></li>
+            <li><a href="/products/synthbrief/">SynthBrief</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="/technology/">Technology <span class="dropdown-arrow">▾</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/technology/rag-systems/">RAG Systems</a></li>
+            <li><a href="/technology/domain-embeddings/">Domain-Specific Embeddings</a></li>
+            <li><a href="/technology/maritime-nlp-pipelines/">Maritime NLP Pipelines</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="/solutions/">Solutions <span class="dropdown-arrow">▾</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/solutions/threat-intelligence/">Threat Intelligence</a></li>
+            <li><a href="/solutions/maritime-awareness/">Maritime Domain Awareness</a></li>
+            <li><a href="/solutions/intelligence-reporting/">Intelligence Report Generation</a></li>
+            <li><a href="/solutions/osint-processing/">OSINT Processing</a></li>
+          </ul>
+        </li>
+        <li><a href="/compare/">Compare</a></li>
+        <li><a href="/case-studies/">Case Studies</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/team/">Team</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main">
+    <article>
+      {{ content | safe }}
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-org">
+        <strong>{{ site.name }}</strong> — {{ site.tagline }}
+      </div>
+      <div class="footer-links">
+        {% if site.social.github %}
+        <a href="{{ site.social.github }}" target="_blank" rel="noopener noreferrer">GitHub</a>
+        {% endif %}
+        {% if site.social.linkedin %}
+        <a href="{{ site.social.linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        {% endif %}
+      </div>
+      <p class="footer-copy">&copy; {% year %} {{ site.name }}. All rights reserved.</p>
+      {% if site.org.contact_email %}
+      <p class="footer-contact"><a href="mailto:{{ site.org.contact_email }}">{{ site.org.contact_email }}</a></p>
+      {% endif %}
+    </div>
+  </footer>
+</body>
+</html>

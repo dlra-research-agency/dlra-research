@@ -1,0 +1,87 @@
+---
+layout: base.njk
+title: Customize Your Site - Made With Claw
+---
+
+<section class="guide">
+  <h1>5. Customize Your Site</h1>
+  <p class="lead">Update the template with your branding, content, and SEO optimizations.</p>
+
+  <h2>Site Configuration</h2>
+  <p>Update <code>src/_data/site.json</code> with your details:</p>
+  <pre><code>{
+  "name": "Your Site Name",
+  "description": "Your site description for SEO",
+  "url": "https://yourdomain.com"
+}</code></pre>
+
+  <h2>Branding & Colors</h2>
+  <p>Edit the CSS variables in <code>src/assets/css/style.css</code>:</p>
+  <pre><code>:root {
+  --color-primary: #2563eb;      /* Your brand color */
+  --color-primary-dark: #1d4ed8;
+  --color-text: #1f2937;
+  --color-background: #ffffff;
+  /* ... */
+}</code></pre>
+
+  <h2>Adding Pages</h2>
+  <p>Create new <code>.njk</code> files in <code>src/</code>:</p>
+  <pre><code>---
+layout: base.njk
+title: Your Page Title
+---
+
+&lt;section class="page-content"&gt;
+  &lt;h1&gt;Your Page Title&lt;/h1&gt;
+  &lt;p&gt;Your content here...&lt;/p&gt;
+&lt;/section&gt;</code></pre>
+
+  <h2>URL Structure</h2>
+  <p>For location-based businesses, create hierarchical pages:</p>
+  <pre><code>src/
+├── washington/
+│   ├── seattle/
+│   │   ├── service-one.njk    → /washington/seattle/service-one/
+│   │   └── service-two.njk    → /washington/seattle/service-two/
+│   └── lynnwood/
+│       └── service-one.njk    → /washington/lynnwood/service-one/</code></pre>
+
+  <p>Or use the <code>permalink</code> frontmatter:</p>
+  <pre><code>---
+layout: base.njk
+title: Service One in Seattle
+permalink: /washington/seattle/service-one/
+---</code></pre>
+
+  <h2>SEO Requirements</h2>
+  <p>Every page should include:</p>
+  <table>
+    <tr><td><strong>Content</strong></td><td>1000+ words minimum</td></tr>
+    <tr><td><strong>Primary keyword</strong></td><td>In title, H1, URL, first 100 words</td></tr>
+    <tr><td><strong>External links</strong></td><td>3+ to authority sites</td></tr>
+    <tr><td><strong>FAQ section</strong></td><td>5+ Q&As with schema</td></tr>
+    <tr><td><strong>Footer</strong></td><td>Embedded Google Map</td></tr>
+  </table>
+  <p>See <a href="https://github.com/eastsidehealthcare/made-with-claw/blob/main/docs/SEO-GUIDELINES.md" target="_blank">docs/SEO-GUIDELINES.md</a> for the full checklist.</p>
+
+  <h2>Let Your Assistant Help</h2>
+  <p>Tell your assistant what content you need:</p>
+  <blockquote>"Create a new service page for 'Emergency Dentist in Seattle'. Follow the SEO guidelines — 1000+ words, FAQ section, proper schema markup."</blockquote>
+
+  <p>Or for bulk page creation:</p>
+  <blockquote>"Create location pages for our Seattle, Bellevue, and Tacoma offices. Each should have our three main services: teeth cleaning, whitening, and emergency care."</blockquote>
+
+  <h2>Deploy Changes</h2>
+  <p>Once you or your assistant makes changes:</p>
+  <ol>
+    <li>Commit and push to a feature branch</li>
+    <li>Create a pull request</li>
+    <li>Review the Amplify preview</li>
+    <li>Merge to main → auto-deploys to production</li>
+  </ol>
+
+  <div class="next-step">
+    <a href="/guide/seo-guidelines/">View SEO Guidelines →</a>
+  </div>
+</section>

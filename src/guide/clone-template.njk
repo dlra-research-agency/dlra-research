@@ -1,0 +1,77 @@
+---
+layout: base.njk
+title: Clone the Template - Made With Claw
+---
+
+<section class="guide">
+  <h1>1. Clone the Template</h1>
+  <p class="lead">Start with our open-source template — no need to build from scratch.</p>
+
+  <h2>The Template Repository</h2>
+  <p>We've open-sourced the complete stack at:</p>
+  <p><strong><a href="https://github.com/eastsidehealthcare/made-with-claw" target="_blank">github.com/eastsidehealthcare/made-with-claw</a></strong></p>
+
+  <h2>What's Included</h2>
+  <ul>
+    <li><strong>11ty project structure</strong> — ready to build</li>
+    <li><strong>Base layouts and templates</strong> — Nunjucks templating</li>
+    <li><strong>CSS with custom properties</strong> — easy theming</li>
+    <li><strong>Amplify build config</strong> — <code>amplify.yml</code> pre-configured</li>
+    <li><strong>SEO guidelines</strong> — comprehensive checklist in <code>docs/</code></li>
+  </ul>
+
+  <h2>Option A: Fork the Repository (Recommended)</h2>
+  <p>Forking keeps a connection to the original repo, making it easy to pull updates.</p>
+  <ol>
+    <li>Go to <a href="https://github.com/eastsidehealthcare/made-with-claw" target="_blank">github.com/eastsidehealthcare/made-with-claw</a></li>
+    <li>Click the <strong>Fork</strong> button (top right)</li>
+    <li>Choose your account or organization</li>
+    <li>Optionally rename the repo to match your project</li>
+  </ol>
+
+  <h2>Option B: Use as Template</h2>
+  <p>If you want a completely independent copy with no fork relationship:</p>
+  <ol>
+    <li>Go to the repository</li>
+    <li>Click <strong>Code</strong> → <strong>Download ZIP</strong></li>
+    <li>Extract and push to your own new repository</li>
+  </ol>
+
+  <p>Or use the GitHub CLI:</p>
+  <pre><code># Create a new repo from the template
+gh repo create my-site --template eastsidehealthcare/made-with-claw --private
+
+# Or clone directly  
+git clone https://github.com/eastsidehealthcare/made-with-claw.git my-site
+cd my-site
+rm -rf .git
+git init
+git remote add origin git@github.com:your-org/my-site.git</code></pre>
+
+  <h2>Verify Your Clone</h2>
+  <p>After cloning/forking, you should have:</p>
+  <pre><code>my-site/
+├── .eleventy.js          # 11ty config
+├── amplify.yml           # Amplify build settings
+├── package.json
+├── docs/
+│   └── SEO-GUIDELINES.md # SEO checklist
+└── src/
+    ├── _data/            # Site config
+    ├── _includes/        # Layouts
+    ├── assets/           # CSS, images
+    └── *.njk             # Pages</code></pre>
+
+  <h2>Test Locally (Optional)</h2>
+  <pre><code># Install dependencies
+npm install
+
+# Start dev server
+npm run dev
+
+# Open http://localhost:8080</code></pre>
+
+  <div class="next-step">
+    <a href="/guide/github-setup/">Next: Set Up GitHub Access →</a>
+  </div>
+</section>

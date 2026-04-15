@@ -1,0 +1,65 @@
+---
+layout: layouts/base.njk
+title: ""
+description: ""
+---
+
+{# Answer capsule: 40-60 word definition of this technology/concept #}
+<section class="answer-capsule">
+  <h1>{{ title }}</h1>
+  <p><strong><!-- 40-60 word direct definition --></strong></p>
+</section>
+
+<section class="why-it-matters">
+  <h2>Why It Matters</h2>
+  <p><strong><!-- Answer capsule --></strong></p>
+  {# Explain significance before mechanics — front-load the "so what" #}
+</section>
+
+<section class="how-it-works">
+  <h2>How It Works</h2>
+  <p><strong><!-- Answer capsule --></strong></p>
+  {# Technical explanation with diagram descriptions #}
+  {# Include architecture or process flow narrative #}
+</section>
+
+<section class="current-state">
+  <h2>Current State</h2>
+  <p><strong><!-- Answer capsule with recent stats and citations --></strong></p>
+  {# Stats, adoption figures, market data — all cited #}
+  {# Reference real implementations or deployments #}
+</section>
+
+<section class="implementations">
+  <h2>Real-World Implementations</h2>
+  <p><strong><!-- Answer capsule --></strong></p>
+  {# Named examples of this technology in use #}
+  {# Link to authoritative sources: papers, standards, official docs #}
+</section>
+
+<section class="faq">
+  <h2>Frequently Asked Questions</h2>
+  {# Minimum 5 Q&As with FAQPage schema #}
+</section>
+
+{# Schema: Organization + TechArticle + FAQPage + BreadcrumbList #}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "",
+  "description": "",
+  "author": {
+    "@type": "Organization",
+    "name": "{{ site.name }}",
+    "url": "{{ site.url }}"
+  },
+  "datePublished": "",
+  "proficiencyLevel": "Beginner",
+  "dependencies": "",
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ site.name }}"
+  }
+}
+</script>

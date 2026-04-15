@@ -1,0 +1,59 @@
+---
+layout: layouts/base.njk
+title: ""
+description: ""
+---
+
+{# Answer capsule: 40-60 word summary of what this product does #}
+<section class="answer-capsule">
+  <h1>{{ title }}</h1>
+  <p><strong><!-- 40-60 word direct answer --></strong></p>
+</section>
+
+<section class="product-overview">
+  <h2>Overview</h2>
+  <p><strong><!-- Answer capsule for this section --></strong></p>
+  {# Front-load: key capabilities, stats, and differentiators here #}
+</section>
+
+<section class="capabilities">
+  <h2>Key Capabilities</h2>
+  <p><strong><!-- Answer capsule --></strong></p>
+  {# Structured list or table of capabilities with stats #}
+</section>
+
+<section class="specifications">
+  <h2>Technical Specifications</h2>
+  <p><strong><!-- Answer capsule --></strong></p>
+  {# Comparison table: this product vs. alternatives or configurations #}
+</section>
+
+<section class="use-cases">
+  <h2>Use Cases</h2>
+  <p><strong><!-- Answer capsule --></strong></p>
+</section>
+
+<section class="faq">
+  <h2>Frequently Asked Questions</h2>
+  {# Minimum 5 Q&As with FAQPage schema #}
+</section>
+
+{# Schema: Organization + Product + FAQPage + BreadcrumbList #}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "",
+  "description": "",
+  "brand": {
+    "@type": "Organization",
+    "name": "{{ site.name }}",
+    "url": "{{ site.url }}"
+  },
+  "category": "",
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock"
+  }
+}
+</script>

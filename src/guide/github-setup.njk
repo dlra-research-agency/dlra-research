@@ -1,0 +1,46 @@
+---
+layout: base.njk
+title: GitHub Setup - Made With Claw
+---
+
+<section class="guide">
+  <h1>2. Set Up GitHub Access</h1>
+  <p class="lead">Give your OpenClaw assistant secure access to push code to your repository.</p>
+
+  <h2>Why SSH Keys?</h2>
+  <p>SSH keys let your assistant interact with GitHub without storing passwords or tokens in chat. It's more secure and only needs to be set up once per server.</p>
+
+  <h2>What to Tell Your Assistant</h2>
+  <blockquote>
+    "Generate an SSH key for GitHub access."
+  </blockquote>
+
+  <p>Your assistant will:</p>
+  <ol>
+    <li>Generate an SSH key pair on the server</li>
+    <li>Show you the public key</li>
+  </ol>
+
+  <h2>Add the Key to GitHub</h2>
+  <ol>
+    <li>Go to <a href="https://github.com/settings/keys" target="_blank" rel="noopener">GitHub → Settings → SSH and GPG keys</a></li>
+    <li>Click <strong>New SSH key</strong></li>
+    <li>Paste the public key your assistant provided</li>
+    <li>Give it a name like "OpenClaw Server"</li>
+    <li>Click <strong>Add SSH key</strong></li>
+  </ol>
+
+  <p>Tell your assistant:</p>
+  <blockquote>"I've added the SSH key to GitHub. My repo is at https://github.com/your-org/your-repo.git"</blockquote>
+
+  <h2>Verify Access</h2>
+  <p>Your assistant will test the connection by cloning your repository. If successful, they can now push code, create branches, and manage your site.</p>
+
+  <h2>Already Have SSH Set Up?</h2>
+  <p>If you've already configured SSH keys for your OpenClaw server, just tell your assistant where your repo is:</p>
+  <blockquote>"I've cloned the Made With Claw template to https://github.com/your-org/your-repo.git — please clone it and verify access."</blockquote>
+
+  <div class="next-step">
+    <a href="/guide/amplify-setup/">Next: Connect AWS Amplify →</a>
+  </div>
+</section>
