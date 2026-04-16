@@ -256,7 +256,21 @@ pre code {
    Main Content
    -------------------------------------------------------------------------- */
 
-.main { min-height: 60vh; }
+.main {
+  min-height: 60vh;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--space-12) var(--space-6);
+}
+
+.main h1 {
+  font-size: var(--font-size-3xl);
+  margin-bottom: var(--space-6);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.main article { margin-top: var(--space-6); }
 
 /* --------------------------------------------------------------------------
    Hero
