@@ -1,3 +1,5 @@
+const markdownIt = require("markdown-it");
+
 module.exports = function(eleventyConfig) {
   // Exclude page type reference templates from output
   eleventyConfig.ignores.add("src/_page_types/**");
@@ -34,6 +36,19 @@ module.exports = function(eleventyConfig) {
 
   // Add year shortcode for copyright
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
+
+  // Markdown-it instance
+  const md = markdownIt({
+    html: true,
+    linkify: false,
+    typographer: false,
+  });
+
+  // Markdown-to-HTML filter for Nunjucks pages
+  eleventyConfig.addFilter("markdown", (content) => {
+    if (!content) return "";
+    return md.render(content);
+  });
 
   return {
     dir: {
