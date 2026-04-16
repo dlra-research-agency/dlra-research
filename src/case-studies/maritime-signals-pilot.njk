@@ -1,0 +1,197 @@
+---
+layout: base.njk
+title: "Case Study: Maritime Signals Analysis Pilot"
+description: "A pilot deployment of Maritime NLP measured the system's ability to process maritime text data alongside AIS and sensor feeds — documenting a 40% reduction in triage time."
+permalink: /case-studies/maritime-signals-pilot/
+breadcrumbs:
+  - name: Home
+    url: https://dlra-research.org/
+  - name: Case Studies
+    url: https://dlra-research.org/case-studies/
+  - name: "Maritime Signals Analysis Pilot"
+    url: https://dlra-research.org/case-studies/maritime-signals-pilot/
+faqs:
+  - question: "What was measured in the maritime pilot?"
+    answer: "The pilot measured triage time for maritime threat reports, entity extraction accuracy, cross-source correlation discovery rates, anomaly contextualization speed, and multilingual transcript processing. The primary quantitative result was a 40% reduction in maritime threat report triage time compared to manual processing."
+  - question: "How does the 40% triage reduction compare to the 81% brief generation reduction from the other case study?"
+    answer: "The metrics measure different tasks. The 40% applies to initial triage disposition of incoming maritime reports — a faster, higher-volume task. The 81% reduction from the partner agency evaluation measures total time to produce a finished intelligence brief — a longer, more complex workflow. Both reductions are measured against their respective manual baselines."
+  - question: "How does Maritime NLP handle AIS spoofing?"
+    answer: "Maritime NLP does not detect AIS spoofing directly — that function belongs to the AIS tracking system. When the tracking system flags a spoofing anomaly, Maritime NLP provides text-based context: historical reporting on the vessel and operator, relevant signals intercepts, and OSINT articles that help the analyst determine the significance of the spoofing event."
+  - question: "What languages does Maritime NLP support?"
+    answer: "The pilot included automated language detection and translation for the primary languages encountered in the maritime theater. Specific language coverage depends on the deployment configuration and the available translation models for the operational theater."
+  - question: "Can the maritime pilot results be replicated in other theaters?"
+    answer: "The 40% triage time reduction is specific to the pilot context — data volume, report types, and analyst team composition. Results in different maritime theaters will vary based on operational conditions. The system's core capabilities are transferable across maritime operating environments."
+pageSchema: |2
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "Maritime Signals Analysis Pilot",
+        "description": "A pilot deployment of Maritime NLP measured the system's ability to process maritime text data alongside AIS and sensor feeds — documenting a 40% reduction in triage time.",
+        "url": "https://dlra-research.org/case-studies/maritime-signals-pilot/",
+        "publisher": {
+          "@type": "Organization",
+          "name": "DLRA",
+          "url": "https://dlra-research.org"
+        }
+      },
+      {
+        "@type": "Organization",
+        "name": "DLRA",
+        "url": "https://dlra-research.org",
+        "sameAs": [
+          "https://github.com/dlra-research-agency"
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What was measured in the maritime pilot?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The pilot measured triage time for maritime threat reports, entity extraction accuracy, cross-source correlation discovery rates, anomaly contextualization speed, and multilingual transcript processing. The primary quantitative result was a 40% reduction in maritime threat report triage time compared to manual processing."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does the 40% triage reduction compare to the 81% brief generation reduction from the other case study?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The metrics measure different tasks. The 40% applies to initial triage disposition of incoming maritime reports. The 81% reduction measures total time to produce a finished intelligence brief. Both reductions are measured against their respective manual baselines."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does Maritime NLP handle AIS spoofing?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Maritime NLP does not detect AIS spoofing directly — that function belongs to the AIS tracking system. When the tracking system flags a spoofing anomaly, Maritime NLP provides text-based context: historical reporting on the vessel and operator, relevant signals intercepts, and OSINT articles that help the analyst determine the significance of the spoofing event."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What languages does Maritime NLP support?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The pilot included automated language detection and translation for the primary languages encountered in the maritime theater. Specific language coverage depends on the deployment configuration and the available translation models for the operational theater."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can the maritime pilot results be replicated in other theaters?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The 40% triage time reduction is specific to the pilot context. Results in different maritime theaters will vary based on operational conditions. The system's core capabilities are transferable across maritime operating environments."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://dlra-research.org/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Case Studies",
+            "item": "https://dlra-research.org/case-studies/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Maritime Signals Analysis Pilot",
+            "item": "https://dlra-research.org/case-studies/maritime-signals-pilot/"
+          }
+        ]
+      }
+    ]
+  }
+---
+
+## Maritime Signals Analysis Pilot Deployment
+
+**A pilot deployment of [DLRA Maritime NLP](/products/maritime-nlp) measured the system's ability to process maritime text data — signals transcripts, incident reports, and OSINT feeds — alongside AIS position data and satellite imagery. The pilot documented a 40% reduction in triage time and evaluated entity extraction accuracy across heterogeneous maritime data sources.**
+
+## Challenge
+
+Maritime surveillance operations generate data from multiple sensor types: AIS transponders broadcast vessel positions, satellites capture imagery, radar tracks vessel movements, and signals intercepts capture communications. The numerical and imagery data are processed by established systems. The text data — signals transcripts, port state control reports, maritime incident records, and open-source maritime reporting — was processed manually by analysts.
+
+AIS spoofing has increased over 200% since 2022, according to [Planet Labs](https://www.planet.com/pulse/illuminate-the-dark-fleet-with-planet-maritime-domain-awareness/). This trend makes text-based corroboration increasingly critical: when AIS data cannot be trusted, signals intercepts and textual reporting provide the context needed to determine whether a vessel's behavior is suspicious or routine.
+
+According to [MAG Aerospace's 2025 SIGINT workflow study](https://www.magaero.com/), manual processing of a single maritime Source of Interest takes 12 to 18 person-hours, with the majority consumed by mechanical evidence assembly. In a busy maritime theater with hundreds of active Sources of Interest, the manual processing requirement exceeds available analyst capacity.
+
+The pilot organization sought to automate the text-processing layer of maritime surveillance — maintaining analyst control over analytical judgment while reducing the time spent reading, extracting, and cross-referencing maritime text data.
+
+## Approach
+
+DLRA Maritime NLP was deployed to process the pilot organization's maritime text data streams alongside their existing AIS and imagery systems.
+
+### Data Integration
+
+The pilot processed three maritime text data categories:
+
+| Data Type | Daily Volume | Processing Before Pilot | Processing During Pilot |
+|-----------|-------------|------------------------|------------------------|
+| Maritime signals transcripts | 100–300 per day | Manual reading and extraction | Automated entity extraction and correlation |
+| Maritime incident reports | 20–80 per day | Manual triage and categorization | Automated relevance scoring and entity extraction |
+| OSINT maritime articles | 200–500 per day | Keyword-based filtering | NLP entity extraction and relevance ranking |
+
+AIS position data (300,000+ messages daily) was processed by the existing AIS tracking system. Maritime NLP correlated text-derived entities with AIS tracks, flagging instances where text intelligence mentioned vessels or locations that matched anomalous AIS patterns.
+
+### Entity Extraction Pipeline
+
+Maritime NLP's entity extraction model was configured for the pilot's maritime domain, covering: vessel names and identifiers (including aliases and variant transliterations), MMSI numbers, port facilities (UN/LOCODE), geographic coordinates, cargo descriptions, personnel names, and organizational affiliations.
+
+Entity resolution — linking the same vessel across different names, flags, and identifiers in different sources — was a critical capability tested during the pilot. Maritime entities frequently appear under variant names: a vessel flagged in a signals transcript by its radio call sign may appear in a port report by its registered name and in an OSINT article by its previous name under a prior flag.
+
+### Anomaly Contextualization
+
+When the AIS tracking system detected an anomaly (dark period, route deviation, speed inconsistency), Maritime NLP automatically retrieved relevant text intelligence about the vessel, its operator, its route, and its declared cargo — providing context that the analyst needed to assess whether the anomaly indicated illicit activity or a routine operational condition.
+
+## Results
+
+**The pilot measured Maritime NLP's impact across four dimensions: triage time, processing volume, cross-source correlations, and AIS anomaly contextualization. All metrics showed significant improvement over the manual baseline.**
+
+| Metric | Manual Baseline | Maritime NLP Pilot |
+|--------|-----------------|-------------------|
+| Threat report triage time | Baseline | 40% reduction |
+| Signals transcripts processed per analyst per day | 15–25 (manual reading) | 100–300 (automated extraction, analyst review) |
+| Entity extraction from signals transcripts | Manual (analyst notes) | Automated with analyst verification |
+| Cross-source correlations surfaced per day | 2–5 (analyst-discovered) | 15–30 (system-discovered, analyst-reviewed) |
+| AIS anomaly contextualization time | 30–60 minutes per anomaly | 3–5 minutes (pre-populated context) |
+| Multilingual transcript handling | Manual translation request (24–48 hour delay) | Automated language detection and translation |
+
+### Triage Time Reduction
+
+The 40% reduction in triage time applied to the initial assessment of incoming maritime threat reports — classifying each report by relevance, priority, and relationship to active intelligence requirements. Maritime NLP's relevance scoring and entity extraction eliminated the manual reading step for the majority of incoming reports, allowing analysts to focus their reading time on the subset of reports flagged as high-relevance.
+
+### Cross-Source Correlation
+
+The most significant qualitative finding was the increase in cross-source correlations. Maritime NLP surfaced 3–6 times more correlations per day than manual analysis, because the system automatically linked entities across signals transcripts, incident reports, and OSINT feeds. Analysts reported that approximately 60% of the system-discovered correlations were operationally relevant — a false positive rate they considered acceptable given the volume increase.
+
+### Entity Resolution
+
+The entity resolution capability was tested against known vessel alias sets. Maritime NLP correctly linked vessel identities across different names, flags, and identifiers in approximately 85% of test cases. The remaining 15% involved highly obscured aliases (vessels with no shared identifiers across sources) that required analyst judgment to resolve.
+
+## Lessons Learned
+
+**1. Text intelligence is the context layer.** AIS and imagery show *what* is happening. Text intelligence — signals, reports, OSINT — explains *why*. Automating the text layer accelerates the contextual understanding that analysts need to interpret sensor data.
+
+**2. Cross-source correlation scales with automation.** Manual analysts discover correlations limited by how many reports they can read. Automated entity extraction and correlation surfaces connections across the full incoming data volume — a qualitative change in coverage, not just speed.
+
+**3. Entity resolution is the hardest problem.** Maritime entity resolution — linking the same vessel across different names, flags, and identifiers — remains partially dependent on analyst expertise. Automated resolution handles approximately 85% of cases; the remainder requires human judgment.
+
+**4. Multilingual processing eliminates delays.** Automated language detection and translation removed the 24–48 hour delay for non-English transcripts, enabling same-day processing of multilingual maritime communications.
+
+According to a 2024 study published in [*Information* (MDPI)](https://www.mdpi.com/2078-2489/16/8/658), AI in maritime security faces challenges including data integration across heterogeneous sources and anomaly detection in high-volume data streams. The pilot confirmed both challenges and demonstrated that NLP-based text processing addresses the data integration dimension effectively when paired with existing sensor systems.
+
+> "Geospatial AI is emerging as a robust complement, combining data from satellite imagery, AIS, and radar to form a comprehensive view of maritime activities."
+> — Maritime Fairtrade, [*Navigating the Future*](https://maritimefairtrade.org/navigating-the-future-ai-applications-and-challenges-in-maritime-surveillance/), 2025

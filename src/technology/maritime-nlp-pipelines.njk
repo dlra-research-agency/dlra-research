@@ -1,0 +1,238 @@
+---
+layout: base.njk
+title: "Maritime NLP Pipelines for Defense Intelligence"
+description: "Maritime NLP pipelines process AIS data, vessel tracking, and ocean signal intelligence at scale, enabling persistent maritime domain awareness across the Indo-Pacific."
+permalink: /technology/maritime-nlp-pipelines
+pageSchema: |2
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Maritime NLP Pipelines for Defense Intelligence",
+    "description": "Maritime NLP pipelines process AIS data, vessel tracking, and ocean signal intelligence at scale, enabling persistent maritime domain awareness across the Indo-Pacific.",
+    "datePublished": "2026-04-09",
+    "dateModified": "2026-04-09"
+  }
+---
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://dlra-research.org"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Technology",
+      "item": "https://dlra-research.org/technology"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Maritime NLP Pipelines",
+      "item": "https://dlra-research.org/technology/maritime-nlp-pipelines"
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "DLRA Research Agency",
+  "sameAs": [
+    "https://github.com/dlra-research-agency",
+    "https://www.linkedin.com/company/dlra-research-agency"
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What data does a maritime NLP pipeline process?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The pipeline processes text-based maritime data: signals intercepts (communications transcripts), port state control reports, maritime incident records, NAVTEX broadcasts, GMDSS messages, and open-source maritime reporting. It does not process AIS position data or satellite imagery directly — those are handled by complementary sensor systems whose data the NLP pipeline correlates with text-derived intelligence."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does entity resolution handle vessels that change names and flags?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The entity resolution model combines identifier matching (MMSI, IMO number, call sign), string similarity (name variants and transliterations), and contextual signals (route patterns, ownership chains, temporal co-occurrence). Approximately 85% of vessel alias linkages are resolved automatically; the remaining 15% — typically involving vessels with no shared identifiers across sources — require analyst judgment."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is multilingual processing important for maritime NLP?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Maritime communications in the Asia-Pacific region occur in multiple languages. Without automated translation, non-English intercepts require manual translation requests with 24–48 hour delays. The NLP pipeline includes language detection and translation, enabling same-day processing while preserving original-language sources for analyst verification."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can the pipeline detect AIS spoofing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The pipeline does not detect AIS spoofing from position data — that function belongs to AIS tracking systems. When those systems flag a spoofing anomaly, the NLP pipeline provides text-based context: historical reporting, relevant signals intercepts, and OSINT that help the analyst assess the anomaly's significance."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the relationship between this pipeline and DLRA's other products?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Maritime NLP handles signal-to-text processing and entity extraction for maritime data. Extracted entities and anomaly reports feed into DLRA Threat Lens for cross-domain correlation and into DLRA SynthBrief for automated maritime intelligence brief generation. The three products form an end-to-end pipeline from raw maritime signals to finished intelligence products."
+      }
+    }
+  ]
+}
+</script>
+
+<nav aria-label="Breadcrumb">
+  <ol>
+    <li><a href="https://dlra-research.org">Home</a></li>
+    <li><a href="https://dlra-research.org/technology">Technology</a></li>
+    <li>Maritime NLP Pipelines</li>
+  </ol>
+</nav>
+
+<h2>NLP Pipelines for Maritime Signals Intelligence</h2>
+
+<p><strong>Natural language processing pipelines for maritime signals intelligence convert raw communications intercepts, port reports, and maritime incident records into structured entity data that can be correlated with AIS vessel positions, satellite imagery, and radar tracks. The pipeline addresses a gap in the maritime domain awareness ecosystem: automated sensor systems process positional and imagery data effectively, but the text-based intelligence that provides operational context — the signals transcripts, port authority notices, and open-source reporting that explain why a vessel is behaving anomalously — requires domain-specific NLP to process at operational scale.</strong></p>
+
+<p>Maritime domain awareness has historically relied on numerical data — AIS positions, radar tracks, satellite imagery. The text dimension — communications transcripts, incident reports, inter-agency messages, OSINT articles — has been processed manually. According to the U.S. Naval Institute's September 2025 <a href="https://www.usni.org/magazines/proceedings/2025/september/move-beyond-ais-maritime-domain-awareness"><em>Proceedings</em></a>, effective maritime domain awareness now requires moving beyond AIS as a primary data source, integrating diverse signals including text-based intelligence to build a comprehensive operational picture.</p>
+
+<p>The volume of maritime text data exceeds manual processing capacity. AIS spoofing has increased over 200% since 2022, according to <a href="https://www.planet.com/pulse/illuminate-the-dark-fleet-with-planet-maritime-domain-awareness/">Planet Labs</a>, making text-based corroboration increasingly critical. When transponder data cannot be trusted, signals transcripts and textual reporting provide the context analysts need to distinguish suspicious behavior from routine operations.</p>
+
+<h3>Pipeline Architecture</h3>
+
+<p><strong>A maritime NLP pipeline operates in five stages: signal-to-text normalization, maritime entity extraction, entity resolution across aliases, cross-source correlation with sensor data, and anomaly-contextualized output for analyst review.</strong></p>
+
+<h4>Stage 1: Signal-to-Text Normalization</h4>
+
+<p>Maritime communications arrive in heterogeneous formats: VHF radio transcripts, GMDSS (Global Maritime Distress and Safety System) messages, port state control reports, NAVTEX broadcasts, maritime safety information bulletins, and signals intercepts. Each format carries its own conventions for identifying vessels, locations, and events.</p>
+
+<p>The normalization layer converts these into a unified text format while preserving source metadata: timestamp, source type, collection method, and original language. Maritime-specific conventions are standardized: call signs mapped to a common format, MMSI numbers validated, port references resolved to UN/LOCODE identifiers, and geographic coordinates normalized to a common datum.</p>
+
+<p>Multilingual processing is essential in maritime contexts. Maritime communications in the Asia-Pacific region occur in English, Mandarin, Malay, Thai, Vietnamese, and other regional languages. The normalization layer includes language identification and translation, with the original-language source preserved alongside the translated text for analyst verification.</p>
+
+<h4>Stage 2: Maritime Entity Extraction</h4>
+
+<p>The entity extraction layer identifies maritime-specific entities from normalized text:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Entity Type</th>
+      <th>Examples</th>
+      <th>Extraction Challenge</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Vessel identifiers</td>
+      <td>Ship name, IMO number, MMSI, call sign</td>
+      <td>Same vessel may use different identifiers across sources</td>
+    </tr>
+    <tr>
+      <td>Port facilities</td>
+      <td>Port name, UN/LOCODE, berth identifier</td>
+      <td>Informal names vs. official designators</td>
+    </tr>
+    <tr>
+      <td>Geographic coordinates</td>
+      <td>Lat/long, named locations, sea area designators</td>
+      <td>Multiple coordinate formats and reference systems</td>
+    </tr>
+    <tr>
+      <td>Cargo descriptions</td>
+      <td>Commodity type, quantity, container identifiers</td>
+      <td>Coded descriptions, abbreviations, euphemisms</td>
+    </tr>
+    <tr>
+      <td>Personnel</td>
+      <td>Crew names, operator contacts, agent names</td>
+      <td>Transliteration variants across languages</td>
+    </tr>
+    <tr>
+      <td>Organizations</td>
+      <td>Shipping companies, beneficial owners, flag states</td>
+      <td>Complex ownership structures, shell companies</td>
+    </tr>
+    <tr>
+      <td>Threat indicators</td>
+      <td>Suspicious activity descriptors, sanctions references</td>
+      <td>Context-dependent — same language may be routine or suspicious</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Entity extraction for maritime text requires domain-tuned models. General-purpose named entity recognition (NER) models trained on news text or web data do not recognize maritime-specific entity types (MMSI numbers, UN/LOCODE, sea area designators) and misclassify defense-specific terminology.</p>
+
+<h4>Stage 3: Entity Resolution</h4>
+
+<p>Entity resolution — linking the same real-world entity across different references in different sources — is the most technically challenging stage of the maritime NLP pipeline. A single vessel may appear as:</p>
+
+<ul>
+  <li>"MV PACIFIC STAR" in a port state control report</li>
+  <li>MMSI 563000123 in an AIS transmission</li>
+  <li>Call sign 9V2345 in a signals intercept</li>
+  <li>"Pacific Star Marine Ltd vessel" in an OSINT article</li>
+  <li>A previous name ("MV OCEAN DAWN") in historical reporting</li>
+</ul>
+
+<p>Entity resolution models link these references by combining identifier matching (MMSI, IMO, call sign), string similarity (name variants), and contextual signals (route patterns, ownership data, temporal co-occurrence). DLRA Maritime NLP's entity resolution achieves approximately 85% accuracy on known vessel alias sets, with the remaining 15% requiring analyst judgment for highly obscured aliases.</p>
+
+<h4>Stage 4: Cross-Source Correlation</h4>
+
+<p>The correlation layer links text-derived entities with data from other maritime intelligence sources: AIS position tracks, satellite imagery reports, and radar observations.</p>
+
+<p>The operationally valuable correlations are those that combine text context with sensor anomalies:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sensor Anomaly</th>
+      <th>Text Context</th>
+      <th>Combined Intelligence Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>AIS dark period (vessel turns off transponder)</td>
+      <td>Signals intercept mentions cargo transfer at estimated location</td>
+      <td>Potential illicit transshipment</td>
+    </tr>
+    <tr>
+      <td>Route deviation from declared voyage</td>
+      <td>OSINT article links vessel operator to sanctioned entity</td>
+      <td>Potential sanctions evasion</td>
+    </tr>
+    <tr>
+      <td>Speed pattern inconsistent with declared cargo</td>
+      <td>Port report notes discrepancy in cargo manifest</td>
+      <td>Possible undeclared cargo</td>
+    </tr>
+    <tr>
+      <td>Vessel not in AIS database</td>
+      <td>Signals intercept identifies vessel by call sign</td>
+      <td>Dark fleet vessel identified via text intelligence</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>According to a 2024 study published in <a href="https://www.mdpi.com/2078-2489/16/8/658"><em>Information</em> (MDPI)</a>, AI in maritime security faces challenges

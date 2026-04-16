@@ -2,14 +2,14 @@
   "name": "DLRA",
   "description": "Applied LLM research for defense and national security — retrieval-augmented generation, maritime NLP pipelines, and automated intelligence brief generation.",
   "url": "https://dlra-research.org",
-  "og_image": "",
-  "ga4_measurement_id": "",
+  "og_image": null,
+  "ga4_measurement_id": null,
   "type": "product",
   "tagline": "Applied LLM Research for Defense and National Security",
   "social": {
     "github": "https://github.com/dlra-research-agency",
-    "linkedin": "",
-    "twitter": ""
+    "linkedin": null,
+    "twitter": null
   },
   "org": {
     "founding_year": "2024",

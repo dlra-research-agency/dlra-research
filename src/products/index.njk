@@ -1,0 +1,187 @@
+---
+layout: base.njk
+title: "Defense Intelligence Products"
+description: "DLRA builds three products for defense intelligence workflows — a RAG-based threat assessment platform, a maritime signals analysis pipeline, and an automated intelligence brief generator."
+permalink: /products/
+breadcrumbs:
+  - name: Home
+    url: https://dlra-research.org/
+  - name: Products
+    url: https://dlra-research.org/products/
+faqs:
+  - question: "Can the products be deployed independently?"
+    answer: "Each product operates as a standalone system. Threat Lens provides retrieval and correlation. Maritime NLP provides maritime signals processing. SynthBrief provides brief generation. Organizations can deploy one, two, or all three depending on their requirements."
+  - question: "What infrastructure is required?"
+    answer: "DLRA products run on standard server infrastructure with GPU acceleration for embedding inference. Specific hardware requirements depend on corpus size, query volume, and latency targets. The products are containerized for deployment flexibility."
+  - question: "How do the products integrate with existing intelligence systems?"
+    answer: "Products accept standard input formats (structured reports, plain text, JSON) and produce standard output formats (configurable templates, STIX/TAXII, plain text). API-based integration with existing intelligence management systems is supported."
+  - question: "What LLMs do the products use?"
+    answer: "DLRA products are model-agnostic at the generation layer. They integrate with whichever LLM meets the deployment environment's security and performance requirements. The domain-tuned retrieval layer — embeddings and vector database — is DLRA-specific and operates independently of the generation model."
+  - question: "What is the deployment timeline?"
+    answer: "Initial deployment — including infrastructure setup, model deployment, and baseline evaluation — typically requires several weeks. Embedding fine-tuning on customer-specific data (if needed beyond DLRA's existing defense-domain models) adds additional time for training data construction and evaluation."
+pageSchema: |2
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "DLRA",
+        "description": "Singapore-based defense technology organization building domain-specific AI systems for defense intelligence — retrieval-augmented generation, maritime NLP pipelines, and automated intelligence brief generators.",
+        "url": "https://dlra-research.org/products/",
+        "sameAs": [
+          "https://github.com/dlra-research-agency"
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Can the products be deployed independently?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Each product operates as a standalone system. Threat Lens provides retrieval and correlation. Maritime NLP provides maritime signals processing. SynthBrief provides brief generation. Organizations can deploy one, two, or all three depending on their requirements."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What infrastructure is required?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "DLRA products run on standard server infrastructure with GPU acceleration for embedding inference. Specific hardware requirements depend on corpus size, query volume, and latency targets. The products are containerized for deployment flexibility."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do the products integrate with existing intelligence systems?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Products accept standard input formats (structured reports, plain text, JSON) and produce standard output formats (configurable templates, STIX/TAXII, plain text). API-based integration with existing intelligence management systems is supported."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What LLMs do the products use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "DLRA products are model-agnostic at the generation layer. They integrate with whichever LLM meets the deployment environment's security and performance requirements. The domain-tuned retrieval layer — embeddings and vector database — is DLRA-specific and operates independently of the generation model."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the deployment timeline?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Initial deployment — including infrastructure setup, model deployment, and baseline evaluation — typically requires several weeks. Embedding fine-tuning on customer-specific data (if needed beyond DLRA's existing defense-domain models) adds additional time for training data construction and evaluation."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://dlra-research.org/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Products",
+            "item": "https://dlra-research.org/products/"
+          }
+        ]
+      }
+    ]
+  }
+---
+
+## Defense Intelligence Products
+
+**DLRA builds three products for defense intelligence workflows — a RAG-based threat assessment platform, a maritime signals analysis pipeline, and an automated intelligence brief generator. Each product uses domain-tuned retrieval architectures that achieve 94.2% accuracy on defense-domain documents, addressing the retrieval accuracy gap that limits general-purpose AI platforms on specialized intelligence tasks.**
+
+The defense AI market has grown to 13.4 billion USD in dedicated Pentagon funding for FY2026, according to [CDO Magazine](https://www.cdomagazine.tech/us-federal-news-bureau/pentagon-seeks-13-4-bn-for-ai-and-autonomy-fy-2026-budget-request). Within this landscape, DLRA operates at the domain-specific retrieval layer — where published research (Voyage AI, 2024; Cisco/NVIDIA, 2024) demonstrates that embedding fine-tuning improves accuracy by 6 to 7 percentage points over general-purpose models, and where sovereign deployment requirements exclude reliance on foreign-hosted commercial platforms.
+
+All three products are designed for sovereign deployment on national infrastructure and integrate to form an end-to-end pipeline from raw intelligence to finished analytical product. According to [Deloitte's 2024 report *The Future of Intelligence Analysis*](https://www.deloitte.com/us/en/insights/industry/government-public-sector-services/artificial-intelligence-impact-on-future-intelligence-analysis.html), IC analysts spend more than 61% of their time on non-advisory prep work and could reclaim roughly 364 hours per analyst per year with AI-enabled support — the operational gap that DLRA's products are designed to address.
+
+## Product Suite
+
+### DLRA Threat Lens — Threat Assessment Platform
+
+RAG-based platform for querying structured and unstructured threat reports in natural language.
+
+| Specification | Value |
+|--------------|-------|
+| Processing throughput | 10,000 documents per hour |
+| Top-5 retrieval accuracy | 94.2% (domain-tuned) vs. 87.3% (general-purpose baseline) |
+| Documents processed to date | 2.4 million+ across three evaluation cycles |
+| Provenance | Sentence-level source attribution |
+| Deployment | Sovereign (on-premise or national cloud) |
+
+**Primary use cases:** Multi-source threat report triage, indicator extraction and correlation, evidence-grounded assessment drafting.
+
+[DLRA Threat Lens →](/products/threat-lens)
+
+### DLRA Maritime NLP — Maritime Signals Analysis
+
+LLM pipeline for maritime signals analysis, vessel tracking correlation, and anomaly detection.
+
+| Specification | Value |
+|--------------|-------|
+| Daily AIS processing | 300,000+ messages per deployment |
+| Triage time reduction | 40% in controlled testing |
+| Entity types | Vessels, ports, coordinates, cargo, personnel, organizations, threat indicators |
+| Anomaly categories | Dark period, route deviation, transshipment, sanctions evasion, AIS spoofing |
+| Deployment | Sovereign (on-premise or national cloud) |
+
+**Primary use cases:** Maritime signals processing, dark fleet detection, cross-source vessel correlation, automated maritime reporting.
+
+[DLRA Maritime NLP →](/products/maritime-nlp)
+
+### DLRA SynthBrief — Intelligence Brief Generation
+
+Automated brief generation from multi-source data fusion with sentence-level provenance.
+
+| Specification | Value |
+|--------------|-------|
+| Generation time | Under 3 minutes from 50+ source documents |
+| Analyst workflow time | 47 minutes (down from 4.2 hours manual baseline) |
+| Provenance | Sentence-level per-claim attribution |
+| Analyst controls | Accept / Reject / Rewrite per claim |
+| Output formats | Configurable templates, STIX/TAXII, plain text |
+
+**Primary use cases:** Scheduled intelligence briefs (daily/weekly), emerging threat response, multi-source assessment production.
+
+[DLRA SynthBrief →](/products/synthbrief)
+
+## How the Products Work Together
+
+**The three products form a pipeline: Threat Lens retrieves and correlates evidence from the document corpus, Maritime NLP processes maritime-domain signals and text, and SynthBrief assembles evidence from both sources into finished intelligence briefs with auditable provenance.**
+
+Raw Intelligence → Threat Lens (retrieval + correlation) →
+
+Maritime Signals → Maritime NLP (entity extraction + anomaly detection) →
+
+SynthBrief (brief generation + provenance) →
+
+Analyst Review (accept/reject/rewrite) →
+
+Finished Intelligence Product
+
+Each product operates independently for organizations that need only one capability, and integrates with the others for organizations that require end-to-end processing. The shared domain-tuned retrieval layer (94.2% accuracy) underpins both Threat Lens and SynthBrief, while Maritime NLP feeds its entity extractions and anomaly reports into both downstream products. NATO's revised AI strategy, endorsed at the 2025 Hague Summit according to [NATO's official summary](https://www.nato.int/en/about-us/official-texts-and-resources/official-texts/2024/07/10/summary-of-natos-revised-artificial-intelligence-ai-strategy), prioritizes interoperability across allied AI systems — a requirement that DLRA's model-agnostic generation layer and standard output formats are designed to support.
+
+## Technical Differentiation
+
+| Dimension | General-Purpose AI Platforms | DLRA Products |
+|-----------|----------------------------|---------------|
+| Retrieval accuracy (defense docs) | ~87% | 94.2% |
+| Embedding approach | General-purpose | Domain fine tuned on defense corpora |
+| Provenance | Passage-level or none | Sentence-level with source offsets |
+| Sovereignty | U.S.-hosted commercial cloud | Sovereign on-premise or national cloud |
+| Maritime capability | Generic text processing | Purpose-built maritime signals pipeline |
+| Model dependency | Single frontier model | Model-agnostic generation layer |
+
+> "For defense use cases, RAG is the most reliable deployment methodology for generative AI services."
+> — GDIT, [*How Adaptive RAG Makes Generative AI More Reliable for Defense Missions*](https://www.gdit.com/perspectives/latest/how-adaptive-rag-makes-generative-ai-more-reliable-for-defense-missions/), 2025

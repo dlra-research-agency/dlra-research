@@ -7,7 +7,7 @@ eleventyExcludeFromCollections: true
   {%- for page in collections.all %}
   {%- if page.url and not page.data.eleventyExcludeFromCollections %}
   <url>
-    <loc>https://madewithclaw.com{{ page.url }}</loc>
+    <loc>{{ site.url }}{{ page.url }}</loc>
     <lastmod>{{ page.date | date }}</lastmod>
     <changefreq>{% if page.url == "/" %}weekly{% else %}monthly{% endif %}</changefreq>
     <priority>{% if page.url == "/" %}1.0{% elif "/guide/" in page.url %}0.8{% else %}0.6{% endif %}</priority>

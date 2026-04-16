@@ -1,0 +1,169 @@
+---
+layout: base.njk
+title: "DLRA Solutions Overview"
+description: "DLRA's products address three defense intelligence use cases where volume exceeds manual processing capacity: threat intelligence, maritime domain awareness, and automated report generation."
+permalink: /solutions/
+breadcrumbs:
+  - name: Home
+    url: https://dlra-research.org/
+  - name: Solutions
+    url: https://dlra-research.org/solutions/
+faqs:
+  - question: "Which solution is right for my organization?"
+    answer: "Organizations processing high volumes of threat reports benefit most from the threat intelligence solution (Threat Lens). Maritime-focused organizations need the maritime domain awareness solution (Maritime NLP). Organizations that produce regular intelligence briefs benefit from the report generation solution (SynthBrief). Most organizations processing multi-domain intelligence benefit from all three working together."
+  - question: "Can the solutions work independently?"
+    answer: "Each solution operates as a standalone capability. Organizations can deploy one use case initially and add others as requirements evolve. The shared retrieval layer means that adding a second or third solution leverages existing infrastructure investment."
+  - question: "What is the deployment model?"
+    answer: "All solutions deploy on sovereign infrastructure — on-premise or national cloud — without foreign-hosted dependencies. Deployment timeline, hardware requirements, and integration scope depend on the specific use case and organizational context."
+  - question: "How do these solutions compare to Palantir AIP or Scale Donovan?"
+    answer: "Palantir AIP and Scale Donovan are general-purpose defense platforms that provide workflow orchestration across many use cases. DLRA's solutions focus specifically on retrieval accuracy for defense intelligence documents, achieving 94.2% versus approximately 87% for general-purpose platforms. The approaches are complementary — DLRA's retrieval layer can enhance the accuracy of documents processed through broader platforms."
+  - question: "Does DLRA's approach work for OSINT as well as classified intelligence?"
+    answer: "The domain-tuned retrieval architecture applies to both classified and open-source intelligence. OSINT processing — triage, entity extraction, and cross-source correlation — benefits from the same accuracy improvements as classified document processing. Organizations can deploy the solutions on unclassified infrastructure for OSINT and on classified infrastructure for national intelligence, using the same domain-tuned models across both environments."
+pageSchema: |2
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "DLRA Solutions Overview",
+        "description": "DLRA's products address three defense intelligence use cases where volume exceeds manual processing capacity: threat intelligence, maritime domain awareness, and automated report generation.",
+        "url": "https://dlra-research.org/solutions/",
+        "publisher": {
+          "@type": "Organization",
+          "name": "DLRA",
+          "url": "https://dlra-research.org"
+        }
+      },
+      {
+        "@type": "Organization",
+        "name": "DLRA",
+        "url": "https://dlra-research.org",
+        "sameAs": [
+          "https://github.com/dlra-research-agency"
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Which solution is right for my organization?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Organizations processing high volumes of threat reports benefit most from the threat intelligence solution (Threat Lens). Maritime-focused organizations need the maritime domain awareness solution (Maritime NLP). Organizations that produce regular intelligence briefs benefit from the report generation solution (SynthBrief). Most organizations processing multi-domain intelligence benefit from all three working together."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can the solutions work independently?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Each solution operates as a standalone capability. Organizations can deploy one use case initially and add others as requirements evolve. The shared retrieval layer means that adding a second or third solution leverages existing infrastructure investment."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the deployment model?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "All solutions deploy on sovereign infrastructure — on-premise or national cloud — without foreign-hosted dependencies. Deployment timeline, hardware requirements, and integration scope depend on the specific use case and organizational context."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do these solutions compare to Palantir AIP or Scale Donovan?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Palantir AIP and Scale Donovan are general-purpose defense platforms that provide workflow orchestration across many use cases. DLRA's solutions focus specifically on retrieval accuracy for defense intelligence documents, achieving 94.2% versus approximately 87% for general-purpose platforms. The approaches are complementary — DLRA's retrieval layer can enhance the accuracy of documents processed through broader platforms."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does DLRA's approach work for OSINT as well as classified intelligence?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The domain-tuned retrieval architecture applies to both classified and open-source intelligence. OSINT processing — triage, entity extraction, and cross-source correlation — benefits from the same accuracy improvements as classified document processing. Organizations can deploy the solutions on unclassified infrastructure for OSINT and on classified infrastructure for national intelligence, using the same domain-tuned models across both environments."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://dlra-research.org/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Solutions",
+            "item": "https://dlra-research.org/solutions/"
+          }
+        ]
+      }
+    ]
+  }
+---
+
+## Solutions by Use Case
+
+**DLRA's products address three defense intelligence use cases where the volume of unstructured data exceeds manual processing capacity: threat intelligence analysis, maritime domain awareness, and intelligence report generation. Each solution applies domain-tuned retrieval architectures to compress the 61% of analyst time spent on non-advisory prep work — the triage, summarization, and source verification that AI can accelerate without replacing human analytical judgment.**
+
+According to [Deloitte's 2024 report *The Future of Intelligence Analysis*](https://www.deloitte.com/us/en/insights/industry/government-public-sector-services/artificial-intelligence-impact-on-future-intelligence-analysis.html), IC analysts could reclaim roughly 364 hours per analyst per year with AI-enabled processing support. DLRA's solutions target the specific workflows where this reclaimed time has the highest operational impact.
+
+## Use Cases
+
+### Threat Intelligence
+
+Multi-source threat report triage, entity extraction, indicator correlation, and evidence-grounded assessment drafting.
+
+**Key capability:** Domain-tuned retrieval (94.2% accuracy) surfaces the correct evidence from large document collections, enabling analysts to query thousands of threat reports in natural language and receive answers with sentence-level source attribution. According to [MAG Aerospace's 2025 SIGINT workflow analysis](https://www.magaero.com/), manual processing of a single source of interest requires 12 to 18 person-hours — a bottleneck that domain-tuned retrieval directly addresses.
+
+**Powered by:** DLRA Threat Lens + SynthBrief
+
+[Threat Intelligence Solutions →](/solutions/threat-intelligence)
+
+### Maritime Domain Awareness
+
+Maritime signals analysis, vessel tracking correlation, dark fleet detection, and anomaly-contextualized reporting.
+
+**Key capability:** NLP pipeline processes 300,000+ AIS messages daily alongside signals transcripts, incident reports, and OSINT feeds — correlating text-derived intelligence with sensor data to detect vessels that deliberately evade identification. According to [Planet Labs](https://www.planet.com/pulse/illuminate-the-dark-fleet-with-planet-maritime-domain-awareness/), AIS spoofing has increased by more than 200% since 2022, making automated correlation between text-based intelligence and sensor data operationally critical.
+
+**Powered by:** DLRA Maritime NLP + Threat Lens + SynthBrief
+
+[Maritime Domain Awareness Solutions →](/solutions/maritime-domain-awareness)
+
+### Intelligence Report Generation
+
+Automated production of structured intelligence briefs from multi-source data fusion, with sentence-level provenance and analyst accept/reject/rewrite controls.
+
+**Key capability:** Generates briefs from 50+ source documents in under 3 minutes. Total analyst workflow time reduced from 4.2 hours to 47 minutes in controlled evaluation — an 81% reduction — while maintaining auditable attribution chains.
+
+**Powered by:** DLRA SynthBrief + Threat Lens
+
+[Intelligence Report Generation Solutions →](/solutions/intelligence-report-generation)
+
+## Capability Comparison by Use Case
+
+| Capability | Threat Intelligence | Maritime Domain Awareness | Report Generation |
+|-----------|-------------------|--------------------------|-------------------|
+| Document retrieval | 94.2% accuracy on defense docs | 94.2% accuracy + maritime entity resolution | 94.2% accuracy across all source types |
+| Processing volume | 10,000 docs/hour (batch) | 300,000+ AIS messages/day + text feeds | 50+ source documents per brief |
+| Key output | Ranked evidence with source attribution | Anomaly reports with cross-source correlation | Structured briefs with per-claim provenance |
+| Time savings | Hours to minutes for triage | 40% triage time reduction | 81% workflow time reduction (4.2 hrs to 47 min) |
+| Analyst role | Queries and reviews evidence | Reviews anomaly alerts and correlations | Accepts/rejects/rewrites claims |
+| Sovereign deployment | On-premise / national cloud | On-premise / national cloud | On-premise / national cloud |
+
+## Cross-Domain Integration
+
+**The three use cases are not isolated — threat intelligence feeds maritime domain awareness, maritime anomalies inform threat assessments, and both produce evidence that flows into intelligence reports. DLRA's products share a common retrieval layer and entity model, enabling cross-domain correlation that siloed tools cannot achieve.**
+
+When Maritime NLP detects a vessel anomaly (AIS dark period in a known transshipment zone, signals intercept indicating cargo transfer), the extracted entities and evidence flow into Threat Lens for correlation against the broader threat picture. The combined evidence then feeds into SynthBrief for inclusion in the next scheduled intelligence brief — with per-claim attribution tracing each statement to its maritime or threat intelligence source.
+
+> "For defense use cases, RAG is the most reliable deployment methodology for generative AI services."
+> — GDIT, [*How Adaptive RAG Makes Generative AI More Reliable for Defense Missions*](https://www.gdit.com/perspectives/latest/how-adaptive-rag-makes-generative-ai-more-reliable-for-defense-missions/), 2025
+
+A curated index of defense AI tools, research, and resources is maintained at [awesome-defense-ai](https://github.com/dlra-research-agency/awesome-defense-ai).

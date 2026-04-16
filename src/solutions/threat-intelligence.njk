@@ -1,0 +1,193 @@
+---
+layout: base.njk
+title: "LLM Applications in Threat Intelligence"
+description: "Large language models reshape threat intelligence workflows by automating triage, entity extraction, and correlation — compressing analyst time spent on non-advisory prep work."
+permalink: /solutions/threat-intelligence/
+breadcrumbs:
+  - name: Home
+    url: https://dlra-research.org/
+  - name: Solutions
+    url: https://dlra-research.org/solutions/
+  - name: "Threat Intelligence"
+    url: https://dlra-research.org/solutions/threat-intelligence/
+faqs:
+  - question: "How do LLMs improve threat intelligence analysis?"
+    answer: "LLMs accelerate the document-intensive stages of threat intelligence — processing and production — by automating report triage, entity extraction, multi-source correlation, and draft assessment generation. According to Deloitte (2024), this can reclaim roughly 364 hours per analyst per year from non-advisory prep work."
+  - question: "Do LLMs replace intelligence analysts?"
+    answer: "LLMs automate the mechanical evidence assembly that consumes the majority of analyst time. The analytical judgment — assessing threat intent, evaluating source reliability, forming conclusions — remains a human function. Systems like DLRA SynthBrief are designed to expose provenance and maintain analyst control at every claim."
+  - question: "What retrieval accuracy do LLM-based threat intelligence tools achieve?"
+    answer: "General-purpose embeddings achieve approximately 87% top-5 retrieval accuracy on defense-domain benchmarks. Domain-tuned systems like DLRA Threat Lens achieve 94.2%, consistent with the 6 to 7 percentage point improvement reported by Voyage AI (2024) and Cisco/NVIDIA (2024)."
+  - question: "Can LLM-based threat intelligence tools handle classified material?"
+    answer: "LLM-based tools can be deployed on classified networks with appropriate infrastructure accreditation. Microsoft Azure OpenAI received IL6 authorization from DISA in 2025. Domain-specific systems like DLRA's products are designed for sovereign deployment without foreign-hosted dependencies."
+  - question: "What is the cost of deploying LLM-based threat intelligence tools?"
+    answer: "Frontier model APIs cost per-token. Defense-native platforms use enterprise licensing. Domain-specific systems have lower ongoing costs but higher upfront investment for embedding fine-tuning and evaluation set construction."
+pageSchema: |2
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "LLM Applications in Threat Intelligence",
+        "description": "Large language models reshape threat intelligence workflows by automating triage, entity extraction, and correlation — compressing analyst time spent on non-advisory prep work.",
+        "url": "https://dlra-research.org/solutions/threat-intelligence/",
+        "publisher": {
+          "@type": "Organization",
+          "name": "DLRA",
+          "url": "https://dlra-research.org"
+        }
+      },
+      {
+        "@type": "Organization",
+        "name": "DLRA",
+        "url": "https://dlra-research.org",
+        "sameAs": [
+          "https://github.com/dlra-research-agency"
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How do LLMs improve threat intelligence analysis?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "LLMs accelerate the document-intensive stages of threat intelligence — processing and production — by automating report triage, entity extraction, multi-source correlation, and draft assessment generation. According to Deloitte (2024), this can reclaim roughly 364 hours per analyst per year from non-advisory prep work."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do LLMs replace intelligence analysts?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "LLMs automate the mechanical evidence assembly that consumes the majority of analyst time. The analytical judgment — assessing threat intent, evaluating source reliability, forming conclusions — remains a human function. Systems like DLRA SynthBrief are designed to expose provenance and maintain analyst control at every claim."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What retrieval accuracy do LLM-based threat intelligence tools achieve?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "General-purpose embeddings achieve approximately 87% top-5 retrieval accuracy on defense-domain benchmarks. Domain-tuned systems like DLRA Threat Lens achieve 94.2%, consistent with the 6 to 7 percentage point improvement reported by Voyage AI (2024) and Cisco/NVIDIA (2024)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can LLM-based threat intelligence tools handle classified material?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "LLM-based tools can be deployed on classified networks with appropriate infrastructure accreditation. Microsoft Azure OpenAI received IL6 authorization from DISA in 2025. Domain-specific systems like DLRA's products are designed for sovereign deployment without foreign-hosted dependencies."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the cost of deploying LLM-based threat intelligence tools?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Frontier model APIs cost per-token. Defense-native platforms use enterprise licensing. Domain-specific systems have lower ongoing costs but higher upfront investment for embedding fine-tuning and evaluation set construction."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://dlra-research.org/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Solutions",
+            "item": "https://dlra-research.org/solutions/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Threat Intelligence",
+            "item": "https://dlra-research.org/solutions/threat-intelligence/"
+          }
+        ]
+      }
+    ]
+  }
+---
+
+## LLM Applications in Defense Threat Intelligence
+
+**Large language models are reshaping threat intelligence workflows by automating the document-intensive steps that consume the majority of analyst time — triage, entity extraction, multi-source correlation, and draft assessment generation. The operational value is not replacing analysts but compressing the 61% of working hours spent on mechanical evidence assembly so that human judgment is applied to analysis rather than data management.**
+
+According to [Deloitte's 2024 report *The Future of Intelligence Analysis*](https://www.deloitte.com/us/en/insights/industry/government-public-sector-services/artificial-intelligence-impact-on-future-intelligence-analysis.html), IC analysts spend more than 61% of their time on non-advisory prep work — triage, summarization, and source verification — and could reclaim roughly 364 hours per analyst per year with AI-enabled support. The National Geospatial Intelligence Agency noted that intelligence organizations could soon require more than 8 million imagery analysts if current trends hold — more than five times the total number of people with top secret clearances in all of government.
+
+These figures define the operational problem that LLM-based threat intelligence tools address. The volume of available intelligence reporting has grown beyond the capacity of human analysts to process manually, and the gap is widening.
+
+## The Threat Intelligence Workflow
+
+**Threat intelligence production follows a five-stage cycle — collection, processing, analysis, production, and dissemination — with LLM applications concentrated in the processing and production stages where document volume creates the largest bottleneck.**
+
+### Stage 1: Collection
+
+Collection — the gathering of raw intelligence from human sources, signals intercepts, open sources, imagery, and technical sensors — remains a human and sensor-driven activity. LLMs do not collect intelligence; they process the output of collection systems.
+
+### Stage 2: Processing (Primary LLM Application)
+
+Processing converts raw collected material into a form suitable for analysis. This includes translation, transcription, entity extraction, and initial categorization. For text-based intelligence — reports, cables, intercepts, OSINT — LLMs accelerate processing by extracting named entities, classifying threat indicators, and linking related reporting across sources.
+
+The processing stage is where retrieval-augmented generation has the highest operational impact. When an analyst receives hundreds of new reports, a RAG system can surface the passages most relevant to active intelligence requirements in seconds — replacing hours of manual scanning.
+
+[DLRA Threat Lens](/products/threat-lens) processes 10,000 documents per hour during batch ingestion, applying domain-tuned embeddings that achieve 94.2% top-5 retrieval accuracy on defense intelligence documents. This accuracy level means that for every analyst query, the top 5 retrieved passages contain the correct evidence more than 9 times out of 10 — compared to approximately 87% for general-purpose embeddings, where roughly 1 in 8 queries fails to surface the most relevant material.
+
+### Stage 3: Analysis
+
+Analysis — the application of human judgment to processed intelligence — is the stage where LLMs serve as decision support rather than automation. The analyst evaluates evidence, identifies patterns, assesses threat intent and capability, and forms judgments. LLMs can surface relevant historical precedents and related reporting, but the analytical judgment itself remains a human function.
+
+### Stage 4: Production (Secondary LLM Application)
+
+Production — writing the finished intelligence product — is the second major LLM application area. Intelligence briefs, threat assessments, and warning reports require assembling evidence from multiple sources into structured documents with attribution chains.
+
+DLRA SynthBrief generates structured intelligence briefs from 50+ source documents in under 3 minutes, with sentence-level provenance linking every claim to its supporting evidence. In controlled evaluation with partner-agency analysts, total workflow time from raw reports to signed-off brief dropped from 4.2 hours to 47 minutes — an 81% reduction. This finding aligns with what [MAG Aerospace reported in 2025](https://www.magaero.com/) for SIGINT workflows: manual processing of a single Source of Interest takes 12 to 18 person-hours, with the majority consumed by evidence assembly.
+
+### Stage 5: Dissemination
+
+Dissemination — delivering finished products to consumers — is increasingly supported by LLMs that tailor product format and classification level to the recipient. The NGA announced in 2025 that it had normalized AI-generated intelligence products using standardized templates, according to [Military.com](https://www.military.com/feature/2025/12/27/2025-review-how-us-military-put-ai-work.html).
+
+## Key Capabilities by Use Case
+
+**LLM-enabled threat intelligence spans six capability areas — from report triage and entity extraction to multi-source correlation and production support. Each capability maps to a specific stage in the intelligence cycle where automation has the highest operational impact.**
+
+| Use Case | LLM Capability | Operational Impact | DLRA Product |
+|----------|---------------|-------------------|--------------|
+| Report triage | Relevance ranking against intelligence requirements | Reduces scanning time from hours to minutes | Threat Lens |
+| Entity extraction | Named entities, threat indicators, geographic references | Structured data from unstructured text at scale | Threat Lens |
+| Multi-source correlation | Cross-reference entities across document collections | Surfaces connections manual review would miss | Threat Lens |
+| Assessment drafting | Evidence-grounded text generation with citations | Compresses brief production from hours to minutes | SynthBrief |
+| Maritime threat monitoring | AIS correlation, anomaly detection, signals analysis | Real-time maritime domain awareness | Maritime NLP |
+| Indicator tracking | Track specific indicators across incoming reporting | Continuous monitoring without manual search | Threat Lens |
+
+## The Retrieval Accuracy Question
+
+**For threat intelligence applications, retrieval accuracy on domain-specific documents is the most consequential performance metric — it determines whether the analyst receives the correct evidence or a near-miss that could lead to flawed analysis.**
+
+A 2024 Voyage AI domain-adaptation study found that domain-specific embedding fine-tuning improves retrieval accuracy by 6 to 7 percentage points on average compared to general-purpose embeddings. A joint Cisco and NVIDIA 2024 enterprise fine-tuning study reported similar improvements in regulated industries.
+
+The operational significance of this gap compounds across an analyst's daily workload. An analyst executing 100 queries per day against a system with 87% retrieval accuracy receives incorrect top-5 results on approximately 13 queries. At 94% accuracy, that number drops to 6. Across a team of 20 analysts, the difference is 140 versus 120 correct results per day — or 1,400 fewer retrieval errors per month.
+
+> "The first step toward reliable AI-assisted analysis is ensuring the machine retrieves the right evidence. Everything downstream — summarization, report generation, decision support — inherits the accuracy of the retrieval layer."
+> — GDIT, [*How Adaptive RAG Makes Generative AI More Reliable for Defense Missions*](https://www.gdit.com/perspectives/latest/how-adaptive-rag-makes-generative-ai-more-reliable-for-defense-missions/), 2025
+
+## Deployment Landscape
+
+**The DoD's FY2026 budget includes 13.4 billion USD for AI and autonomy, with threat intelligence tools receiving investment through both dedicated programs and enterprise-wide platforms like GenAI.mil, Palantir AIP, and Scale Donovan.**
+
+According to [CDO Magazine](https://www.cdomagazine.tech/us-federal-news-bureau/pentagon-seeks-13-4-bn-for-ai-and-autonomy-fy-2026-budget-request), 1.2 billion USD of the 13.4 billion USD allocation is designated for software and cross-domain integration — the budget category most relevant to LLM-based intelligence tools.
+
+The OSINT market alone reached 2.26 billion USD in 2024 and is projected to grow at 11.9% CAGR to exceed 3.16 billion USD by 2033, according to [Global Market Statistics](https://www.globalmarketstatistics.com/market-reports/open-source-intelligence-osint-market-12725). Approximately 46% of OSINT vendors added machine learning capabilities to their platforms in the past two years, and North America accounts for over 51% of deployments, driven by government intelligence and defense agencies.
+
+## Sovereign Considerations
+
+**Allied nations processing classified threat intelligence require sovereign AI capabilities that do not transit foreign-hosted infrastructure. Domain-specific retrieval systems deployed on national infrastructure address this requirement while maintaining accuracy levels that general-purpose commercial platforms cannot match on defense-domain documents.**
+
+NATO's revised AI strategy, endorsed at the 2025 Hague Summit, prioritizes interoperability across allied AI systems, according to [NATO's official summary](https://www.nato.int/en/about-us/official-texts-and-resources/official-texts/2024/07/10/summary-of-natos-revised-artificial-intelligence-ai-strategy). For threat intelligence, interoperability means that allied nations can share analytical products while maintaining sovereign control over their source material and processing infrastructure.

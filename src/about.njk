@@ -1,0 +1,163 @@
+---
+layout: base.njk
+title: "About DLRA"
+description: "DLRA is a Singapore-based defense technology organization founded in 2024 that builds domain-specific AI systems for defense intelligence — applying fine-tuned retrieval architectures to narrow-domain document retrieval."
+permalink: /about/
+breadcrumbs:
+  - name: Home
+    url: https://dlra-research.org/
+  - name: About
+    url: https://dlra-research.org/about/
+faqs:
+  - question: "What does DLRA stand for?"
+    answer: "DLRA stands for Defense Language Research Agency. The organization is a Singapore-based defense technology entity founded in 2024, specializing in domain-specific AI systems for defense intelligence applications."
+  - question: "Why is DLRA focused on retrieval rather than building frontier models?"
+    answer: "Published research demonstrates that for domain-specific applications, retrieval accuracy — not model size — is the primary determinant of system performance. Domain-tuned embeddings with mid-tier generation models outperform frontier models with generic retrieval on defense intelligence tasks. DLRA focuses on the layer where the accuracy gains are largest."
+  - question: "What makes DLRA's products sovereign-ready?"
+    answer: "All DLRA products operate on-premise or in national cloud environments without dependencies on foreign-hosted platforms. The domain-tuned embedding models and vector databases run entirely within the customer's infrastructure. The products are model-agnostic at the generation layer, integrating with whichever LLM the deployment environment supports."
+  - question: "Who uses DLRA's products?"
+    answer: "DLRA's products are designed for defense intelligence organizations — military intelligence, signals intelligence, and maritime domain awareness units — that process high volumes of unstructured intelligence documents and require sovereign AI capabilities. The products are evaluated and deployed in partnership with defense agencies."
+  - question: "How does DLRA relate to Singapore's defense ecosystem?"
+    answer: "DLRA's team includes professionals with backgrounds at DSO National Laboratories, DSTA, GovTech, and A*STAR — Singapore's core defense technology institutions. The organization contributes to Singapore's sovereign AI capabilities for defense intelligence applications."
+pageSchema: |2
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "DLRA",
+        "description": "Singapore-based defense technology organization building domain-specific AI systems for defense intelligence — retrieval-augmented generation, maritime NLP pipelines, and automated intelligence brief generators.",
+        "url": "https://dlra-research.org/about/",
+        "sameAs": [
+          "https://github.com/dlra-research-agency"
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What does DLRA stand for?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "DLRA stands for Defense Language Research Agency. The organization is a Singapore-based defense technology entity founded in 2024, specializing in domain-specific AI systems for defense intelligence applications."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why is DLRA focused on retrieval rather than building frontier models?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Published research demonstrates that for domain-specific applications, retrieval accuracy — not model size — is the primary determinant of system performance. Domain-tuned embeddings with mid-tier generation models outperform frontier models with generic retrieval on defense intelligence tasks. DLRA focuses on the layer where the accuracy gains are largest."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What makes DLRA's products sovereign-ready?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "All DLRA products operate on-premise or in national cloud environments without dependencies on foreign-hosted platforms. The domain-tuned embedding models and vector databases run entirely within the customer's infrastructure. The products are model-agnostic at the generation layer, integrating with whichever LLM the deployment environment supports."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Who uses DLRA's products?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "DLRA's products are designed for defense intelligence organizations — military intelligence, signals intelligence, and maritime domain awareness units — that process high volumes of unstructured intelligence documents and require sovereign AI capabilities. The products are evaluated and deployed in partnership with defense agencies."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does DLRA relate to Singapore's defense ecosystem?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "DLRA's team includes professionals with backgrounds at DSO National Laboratories, DSTA, GovTech, and A*STAR — Singapore's core defense technology institutions. The organization contributes to Singapore's sovereign AI capabilities for defense intelligence applications."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://dlra-research.org/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "About",
+            "item": "https://dlra-research.org/about/"
+          }
+        ]
+      }
+    ]
+  }
+---
+
+## About DLRA (Defense Language Research Agency)
+
+**DLRA is a Singapore-based defense technology organization founded in 2024 that builds domain-specific AI systems for defense intelligence. The organization applies [fine-tuned retrieval architectures](/technology) to narrow-domain document retrieval, maritime signals analysis, and intelligence report generation — achieving accuracy levels that commercial platforms cannot match on defense-specific tasks.**
+
+The organization was founded on a technical observation supported by published research: for domain-specific applications in defense intelligence, retrieval architecture matters more than model size. A 2024 Voyage AI domain-adaptation study found that domain-specific embedding fine-tuning improves retrieval accuracy by 6 to 7 percentage points on average compared to general-purpose embeddings. A joint Cisco and NVIDIA 2024 enterprise fine-tuning study reported similar improvements in regulated industries. DLRA's internal benchmarks demonstrate a 6.9-point improvement — from 87.3% to 94.2% top-5 retrieval accuracy on defense intelligence documents — consistent with these published findings.
+
+This observation defines DLRA's position in the defense AI landscape. While frontier model providers (OpenAI, Anthropic, Google, xAI) sell general-purpose reasoning capability and defense-native platforms (Palantir, Scale AI) build operational middleware, DLRA operates in the domain-specific retrieval layer where the accuracy gains from fine-tuning have the highest operational impact.
+
+## Mission
+
+**DLRA's mission is to build AI systems that make intelligence analysis faster without making it less rigorous — compressing the mechanical evidence assembly that consumes analyst time while preserving the human judgment, source attribution, and auditable provenance that intelligence products require.**
+
+According to [Deloitte's 2024 report *The Future of Intelligence Analysis*](https://www.deloitte.com/us/en/insights/industry/government-public-sector-services/artificial-intelligence-impact-on-future-intelligence-analysis.html), IC analysts spend more than 61% of their time on non-advisory prep work. DLRA's products target this 61% — the triage, summarization, and source verification steps — while keeping the analyst in control of every analytical judgment.
+
+The design philosophy across all three products reflects this mission: sentence-level provenance in SynthBrief, domain-tuned retrieval in Threat Lens, and cross-source correlation in Maritime NLP all serve the same purpose — reducing time to decision while maintaining the evidence chain that intelligence consumers depend on.
+
+## The Sovereign Intelligence Framework
+
+**DLRA operates under what the organization terms a "Sovereign Intelligence" framework — the principle that defense intelligence processing infrastructure must be deployable on national sovereign systems, without dependency on foreign-hosted commercial platforms, particularly for signals intelligence and human intelligence that cannot transit foreign infrastructure.**
+
+This principle shapes every architectural decision. All DLRA products operate on-premise or in national cloud environments. No intelligence data transits foreign-hosted services. The products are model-agnostic at the generation layer — they integrate with whichever LLM meets the deployment environment's security requirements — and sovereignty-complete at the retrieval layer, with the domain-tuned embeddings and vector databases running entirely within the customer's infrastructure.
+
+NATO's revised AI strategy, endorsed at the 2025 Hague Summit, prioritizes interoperability across allied AI systems, according to [NATO's official summary](https://www.nato.int/en/about-us/official-texts-and-resources/official-texts/2024/07/10/summary-of-natos-revised-artificial-intelligence-ai-strategy). DLRA's products are designed to be interoperable at the analytical product level — sharing finished intelligence through standard frameworks — while maintaining sovereign control over source material and processing infrastructure.
+
+## Focus Areas
+
+| Focus Area | DLRA Product | Key Application |
+|-----------|-------------|-----------------|
+| Threat intelligence | Threat Lens | Multi-source threat report retrieval and assessment |
+| Maritime domain awareness | Maritime NLP | Signals analysis, vessel tracking correlation, anomaly detection |
+| Intelligence report generation | SynthBrief | Automated brief production with sentence-level provenance |
+| OSINT processing | Threat Lens | Open-source intelligence triage and entity extraction |
+| Signals analysis | Maritime NLP | Signal-to-text preprocessing and entity extraction |
+
+## Technical Foundation
+
+**DLRA's technical approach is built on three published findings: that retrieval quality is primarily an encoder problem (Karpukhin et al., 2020), that domain-specific fine-tuning improves retrieval by 6 to 7 percentage points (Voyage AI, 2024), and that exposing provenance at the claim level produces higher adoption than polished end-to-end output in high-stakes workflows.**
+
+The research by Karpukhin et al. in [*Dense Passage Retrieval for Open-Domain Question Answering*](https://arxiv.org/abs/2004.04906) (EMNLP, 2020) established the foundational result. The Voyage AI and Cisco/NVIDIA studies quantified the improvement for domain-specific applications. DLRA's operational experience — particularly the SynthBrief adoption pattern, where polished output was abandoned while provenance-exposed output was adopted — validated the design principles for defense intelligence workflows.
+
+These are not proprietary insights. They are published, replicated findings that DLRA has applied specifically to the defense intelligence domain with domain-specific fine-tuning data and defense-relevant evaluation frameworks.
+
+## By the Numbers
+
+| Metric | Value |
+|--------|-------|
+| Founded | 2024 |
+| Headquarters | Singapore |
+| Documents processed across evaluation cycles | 2.4 million+ |
+| Domain-tuned retrieval accuracy | 94.2% (vs. 87.3% general-purpose baseline) |
+| Brief generation time | Under 3 minutes from 50+ source documents |
+| Analyst workflow time reduction | 81% (4.2 hours to 47 minutes, controlled evaluation) |
+| Daily AIS message processing | 300,000+ per deployment |
+| Maritime triage time reduction | 40% (controlled testing) |
+
+## Leadership
+
+[DLRA's leadership team](/team) brings experience from Singapore's defense technology ecosystem — DSO National Laboratories, DSTA, GovTech, A*STAR, and the Republic of Singapore Navy — with academic backgrounds spanning MIT, NTU, NUS, Imperial College London, and the University of Edinburgh.
+
+[Meet the team →](/team)
+
+> "The first step toward reliable AI-assisted analysis is ensuring the machine retrieves the right evidence. Everything downstream — summarization, report generation, decision support — inherits the accuracy of the retrieval layer."
+> — GDIT, [*How Adaptive RAG Makes Generative AI More Reliable for Defense Missions*](https://www.gdit.com/perspectives/latest/how-adaptive-rag-makes-generative-ai-more-reliable-for-defense-missions/), 2025

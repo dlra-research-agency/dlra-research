@@ -1,0 +1,217 @@
+---
+layout: base.njk
+title: "DLRA Threat Lens — RAG-Based Threat Assessment Platform"
+description: "DLRA Threat Lens is a retrieval-augmented generation platform that applies domain-tuned embeddings to achieve 94.2% retrieval accuracy on defense-domain documents."
+permalink: /products/threat-lens/
+breadcrumbs:
+  - name: Home
+    url: https://dlra-research.org/
+  - name: Products
+    url: https://dlra-research.org/products/
+  - name: "Threat Lens"
+    url: https://dlra-research.org/products/threat-lens/
+faqs:
+  - question: "What types of intelligence documents does Threat Lens process?"
+    answer: "Threat Lens processes structured threat reports, unstructured intelligence cables, OSINT feeds, imagery analysis notes, and multi-source intelligence products. Schema-aware parsers handle the specific format of each document type, preserving internal structure and classification markings."
+  - question: "How does Threat Lens achieve higher retrieval accuracy than general-purpose platforms?"
+    answer: "The system uses embedding models fine-tuned on defense intelligence corpora, adapting the vector representations to the specialized vocabulary of military intelligence. A 2024 Voyage AI study found that domain-specific fine-tuning improves retrieval accuracy by 6 to 7 percentage points on average. Threat Lens demonstrates a 6.9-point improvement (87.3% to 94.2%) on its defense-domain evaluation set."
+  - question: "Can Threat Lens be deployed on classified networks?"
+    answer: "Threat Lens is designed for sovereign deployment — on-premise or in national cloud environments that meet the required classification level. The system does not require connectivity to foreign-hosted cloud services. The generation model can be any LLM that the deployment environment supports."
+  - question: "How does sentence-level provenance work?"
+    answer: "Every sentence in a generated assessment links to the specific document chunk and sentence offsets that support it. The analyst can inspect the original source passage, verify context, and accept, reject, or rewrite each claim individually. This design supports the attribution chain required for formal intelligence products."
+  - question: "What is the processing throughput?"
+    answer: "Threat Lens processes 10,000 documents per hour during batch ingestion. Real-time query response depends on corpus size and infrastructure, with retrieval latency targeted at sub-second for typical analyst queries against corpora of up to several million documents."
+  - question: "How does Threat Lens handle documents at different classification levels?"
+    answer: "Each chunk carries classification-level metadata from ingestion. The retrieval mechanism filters by the analyst's clearance level and the session's classification ceiling, ensuring that higher-classification material is not surfaced in lower-classification queries."
+pageSchema: |2
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Threat Lens",
+        "description": "RAG-based threat assessment platform for defense intelligence with 94.2% retrieval accuracy using domain-tuned embeddings.",
+        "url": "https://dlra-research.org/products/threat-lens/",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Sovereign Infrastructure",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "DLRA",
+          "url": "https://dlra-research.org",
+          "sameAs": [
+            "https://github.com/dlra-research-agency"
+          ]
+        }
+      },
+      {
+        "@type": "Organization",
+        "name": "DLRA",
+        "url": "https://dlra-research.org",
+        "sameAs": [
+          "https://github.com/dlra-research-agency"
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What types of intelligence documents does Threat Lens process?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Threat Lens processes structured threat reports, unstructured intelligence cables, OSINT feeds, imagery analysis notes, and multi-source intelligence products. Schema-aware parsers handle the specific format of each document type, preserving internal structure and classification markings."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does Threat Lens achieve higher retrieval accuracy than general-purpose platforms?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The system uses embedding models fine-tuned on defense intelligence corpora, adapting the vector representations to the specialized vocabulary of military intelligence. A 2024 Voyage AI study found that domain-specific fine-tuning improves retrieval accuracy by 6 to 7 percentage points on average. Threat Lens demonstrates a 6.9-point improvement (87.3% to 94.2%) on its defense-domain evaluation set."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can Threat Lens be deployed on classified networks?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Threat Lens is designed for sovereign deployment — on-premise or in national cloud environments that meet the required classification level. The system does not require connectivity to foreign-hosted cloud services. The generation model can be any LLM that the deployment environment supports."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does sentence-level provenance work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Every sentence in a generated assessment links to the specific document chunk and sentence offsets that support it. The analyst can inspect the original source passage, verify context, and accept, reject, or rewrite each claim individually. This design supports the attribution chain required for formal intelligence products."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the processing throughput?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Threat Lens processes 10,000 documents per hour during batch ingestion. Real-time query response depends on corpus size and infrastructure, with retrieval latency targeted at sub-second for typical analyst queries against corpora of up to several million documents."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does Threat Lens handle documents at different classification levels?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Each chunk carries classification-level metadata from ingestion. The retrieval mechanism filters by the analyst's clearance level and the session's classification ceiling, ensuring that higher-classification material is not surfaced in lower-classification queries."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://dlra-research.org/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Products",
+            "item": "https://dlra-research.org/products/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Threat Lens",
+            "item": "https://dlra-research.org/products/threat-lens/"
+          }
+        ]
+      }
+    ]
+  }
+---
+
+## DLRA Threat Lens: RAG-Based Threat Assessment for Defense Intelligence
+
+**DLRA Threat Lens is a [retrieval-augmented generation](/technology/rag-systems-defense) platform that applies [domain-tuned embeddings](/technology/domain-specific-embeddings) to achieve 94.2% retrieval accuracy on defense-domain documents. Intelligence analysts query large threat report collections in natural language and receive evidence-grounded answers with sentence-level source attribution.**
+
+Intelligence analysts operating in multi-source environments face a volume problem that manual processes cannot scale to meet. According to [Deloitte's 2024 report *The Future of Intelligence Analysis*](https://www.deloitte.com/us/en/insights/industry/government-public-sector-services/artificial-intelligence-impact-on-future-intelligence-analysis.html), IC analysts spend more than 61% of their time on non-advisory prep work — triage, summarization, and source verification — and could reclaim roughly 364 hours per analyst per year with AI-enabled support. The National Geospatial Intelligence Agency noted that intelligence organizations could soon require more than 8 million imagery analysts if current trends hold — more than five times the total number of people with top secret clearances in all of government.
+
+Threat Lens addresses this bottleneck at the retrieval layer, where accuracy on domain-specific vocabulary determines whether the system surfaces the correct evidence or buries it below irrelevant material.
+
+## Technical Architecture
+
+**Threat Lens operates a four-stage pipeline — ingestion, retrieval, generation, and provenance — optimized for defense intelligence document types including structured threat reports, unstructured cables, OSINT feeds, and multi-source intelligence products.**
+
+### Ingestion and Chunking
+
+Documents are processed through a schema-aware parser that identifies logical sections (executive summary, indicators, source attribution, assessment, classification markings) and splits along section boundaries rather than fixed-token windows. Each chunk carries metadata including report ID, section type, sentence offsets, and classification level.
+
+This approach was adopted after internal testing demonstrated that fixed-token chunking (512 tokens) routinely cut structured intelligence reports mid-paragraph, severing the connection between an indicator and its source attribution. Schema-aware chunking preserves this linkage, making every chunk independently citable.
+
+### Domain-Tuned Retrieval
+
+Threat Lens uses embedding models fine-tuned on defense intelligence corpora. The Voyage AI 2024 domain-adaptation study found that domain-specific embedding fine-tuning improves retrieval accuracy by 6 to 7 percentage points on average compared to general-purpose embeddings. A joint Cisco and NVIDIA 2024 enterprise fine-tuning study reported similar improvements in regulated industries where vocabulary specialization matters.
+
+On DLRA's internal evaluation set — drawn from real analyst workflows across threat report classification, entity extraction, and multi-source correlation — the domain-tuned model achieves 94.2% top-5 retrieval accuracy compared to 87.3% for general-purpose embeddings on the same evaluation set. The research by Karpukhin et al. in their 2020 paper [*Dense Passage Retrieval for Open-Domain Question Answering*](https://arxiv.org/abs/2004.04906) established that retrieval quality is primarily an encoder problem, and domain fine-tuning directly addresses the encoder's representation of specialized vocabulary.
+
+### Augmented Generation with Citation Constraints
+
+The generation layer receives the analyst's query alongside the top retrieved chunks and produces a response that cites specific chunks for each claim. The prompt architecture enforces citation constraints: every factual claim in the generated output must reference a specific retrieved passage, and claims without supporting evidence are flagged rather than generated.
+
+### Sentence-Level Provenance
+
+Every generated sentence links back to the specific chunk and sentence offsets that support it. Analysts can click through from any claim to its source passage, verify the original context, and accept, reject, or rewrite at the sentence level.
+
+## Performance Specifications
+
+| Specification | Value | Context |
+|--------------|-------|---------|
+| Document processing throughput | 10,000 documents per hour | Batch ingestion of structured threat reports |
+| Top-5 retrieval accuracy (domain-tuned) | 94.2% | Evaluated on defense intelligence benchmark set |
+| Top-5 retrieval accuracy (general-purpose baseline) | 87.3% | Same evaluation set, general-purpose embeddings |
+| Retrieval accuracy improvement | +6.9 percentage points | Consistent with Voyage AI (2024) and Cisco/NVIDIA (2024) findings |
+| Documents processed to date | 2.4 million+ | Across three operational evaluation cycles |
+| Provenance granularity | Sentence-level | Each claim linked to source chunk and offsets |
+| Supported document types | Structured reports, cables, OSINT feeds, imagery notes | Schema-aware parsers per document type |
+
+## Operational Use Cases
+
+**Threat Lens supports three primary workflows: multi-source threat report triage, indicator extraction and correlation, and evidence-grounded threat assessment drafting.**
+
+### Multi-Source Triage
+
+Analysts querying across hundreds or thousands of recent threat reports receive ranked results with relevance scores and source attribution. The system reduces the time spent scanning reports for relevant indicators from hours to minutes.
+
+### Indicator Extraction and Correlation
+
+Threat Lens identifies named entities, threat indicators, and tactical patterns across document collections and surfaces correlations that manual review would miss. Entity extraction is optimized for defense-specific entity types: threat actors, weapons systems, geographic designators, unit identifiers, and doctrine references.
+
+### Assessment Drafting
+
+Using retrieved evidence, the system generates draft threat assessments with per-claim citations. Analysts review, edit, and approve at the sentence level — retaining full control while eliminating the mechanical assembly of evidence from multiple sources.
+
+According to the research by Gao et al. in the 2024 survey [*Retrieval-Augmented Generation for Large Language Models*](https://arxiv.org/abs/2312.10997), task-grounded evaluation — where benchmarks are built from the actual workflows the system supports — is critical for validating RAG system performance. Threat Lens evaluation sets are constructed from observed analyst workflows rather than generic question-answer pairs. Evaluation benchmarks for defense NLP tasks are available at [defense-nlp-benchmarks](https://github.com/dlra-research-agency/defense-nlp-benchmarks).
+
+## Integration and Deployment
+
+**Threat Lens is designed for deployment on sovereign infrastructure. The system operates on-premise or in national cloud environments, ensuring that classified intelligence material does not transit foreign-hosted platforms.**
+
+The system is model-agnostic at the generation layer — it can integrate with any LLM that meets the deployment environment's security requirements. The retrieval layer, including the domain-tuned embedding model and vector database, operates independently of the generation model.
+
+> "The first step toward reliable AI-assisted analysis is ensuring the machine retrieves the right evidence. Everything downstream — summarization, report generation, decision support — inherits the accuracy of the retrieval layer."
+> — GDIT, [*How Adaptive RAG Makes Generative AI More Reliable for Defense Missions*](https://www.gdit.com/perspectives/latest/how-adaptive-rag-makes-generative-ai-more-reliable-for-defense-missions/), 2025
+
+## Comparison with Alternative Approaches
+
+| Approach | Retrieval Accuracy | Provenance | Sovereignty | Scale |
+|----------|--------------------|-----------|-------------|-------|
+| **Threat Lens (domain-tuned RAG)** | 94.2% | Sentence-level | Sovereign deployment | Team to enterprise |
+| **Frontier LLM API (e.g., GPT-4 via GenAI.mil)** | ~87% | None (parametric generation) | U.S. cloud only | Enterprise |
+| **Defense platform RAG (e.g., Palantir AIP)** | ~87–90% | Passage-level | U.S. cloud only | Enterprise |
+| **Manual analyst workflow** | N/A (human judgment) | Full (human attribution) | Sovereign | Individual |

@@ -1,0 +1,159 @@
+---
+layout: base.njk
+title: "DLRA Technology Overview"
+description: "DLRA's technology stack is built on one finding: for domain-specific intelligence applications, retrieval accuracy — not model size — determines system performance."
+permalink: /technology/
+breadcrumbs:
+  - name: Home
+    url: https://dlra-research.org/
+  - name: Technology
+    url: https://dlra-research.org/technology/
+faqs:
+  - question: "Why does DLRA focus on retrieval rather than building larger models?"
+    answer: "Published research demonstrates that for domain-specific applications, the encoder (embedding model) determines retrieval accuracy more than the generator (LLM) determines output quality. A domain-tuned embedding with a mid-tier generation model outperforms a frontier model with generic retrieval on defense-specific tasks. DLRA invests where the accuracy gains are largest."
+  - question: "What base models does DLRA fine-tune?"
+    answer: "DLRA fine-tunes general-purpose embedding models on defense intelligence corpora. The specific base model is less consequential than the quality of the domain-specific training data. The fine-tuned models run efficiently on standard GPU infrastructure."
+  - question: "How is domain-specific training data created?"
+    answer: "Training data consists of query-passage triplets drawn from real analyst workflows: the questions analysts ask, the passages that answer them, and hard negatives that contain similar vocabulary but are not relevant. This task-grounded approach produces more operationally relevant models than synthetic training sets."
+  - question: "Can DLRA's technology integrate with existing defense AI platforms?"
+    answer: "DLRA products are model-agnostic at the generation layer and accept standard input/output formats. They can operate alongside platforms like Palantir AIP or Scale Donovan, providing enhanced retrieval accuracy on domain-specific tasks while the platform handles workflow orchestration."
+  - question: "How does DLRA's approach compare to using a larger LLM?"
+    answer: "A larger LLM improves generation quality but does not improve retrieval accuracy — the model can only cite evidence the retrieval layer surfaces. Investing in a 94% retrieval system with a capable generation model produces better operational results than investing in a frontier generation model with 87% retrieval accuracy."
+pageSchema: |2
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "TechArticle",
+        "headline": "DLRA Technology Overview",
+        "description": "DLRA's technology stack is built on one finding: for domain-specific intelligence applications, retrieval accuracy — not model size — determines system performance.",
+        "url": "https://dlra-research.org/technology/",
+        "publisher": {
+          "@type": "Organization",
+          "name": "DLRA",
+          "url": "https://dlra-research.org"
+        }
+      },
+      {
+        "@type": "Organization",
+        "name": "DLRA",
+        "url": "https://dlra-research.org",
+        "sameAs": [
+          "https://github.com/dlra-research-agency"
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Why does DLRA focus on retrieval rather than building larger models?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Published research demonstrates that for domain-specific applications, the encoder (embedding model) determines retrieval accuracy more than the generator (LLM) determines output quality. A domain-tuned embedding with a mid-tier generation model outperforms a frontier model with generic retrieval on defense-specific tasks. DLRA invests where the accuracy gains are largest."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What base models does DLRA fine-tune?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "DLRA fine-tunes general-purpose embedding models on defense intelligence corpora. The specific base model is less consequential than the quality of the domain-specific training data. The fine-tuned models run efficiently on standard GPU infrastructure."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How is domain-specific training data created?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Training data consists of query-passage triplets drawn from real analyst workflows: the questions analysts ask, the passages that answer them, and hard negatives that contain similar vocabulary but are not relevant. This task-grounded approach produces more operationally relevant models than synthetic training sets."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can DLRA's technology integrate with existing defense AI platforms?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "DLRA products are model-agnostic at the generation layer and accept standard input/output formats. They can operate alongside platforms like Palantir AIP or Scale Donovan, providing enhanced retrieval accuracy on domain-specific tasks while the platform handles workflow orchestration."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does DLRA's approach compare to using a larger LLM?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A larger LLM improves generation quality but does not improve retrieval accuracy — the model can only cite evidence the retrieval layer surfaces. Investing in a 94% retrieval system with a capable generation model produces better operational results than investing in a frontier generation model with 87% retrieval accuracy."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://dlra-research.org/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Technology",
+            "item": "https://dlra-research.org/technology/"
+          }
+        ]
+      }
+    ]
+  }
+---
+
+## Technology
+
+**DLRA's technology stack is built on one finding: for domain-specific intelligence applications, retrieval accuracy — not model size — determines system performance. Domain-tuned embeddings, schema-aware document processing, and provenance-preserving generation architectures form the foundation of all three products.**
+
+The 2024 Voyage AI domain-adaptation study found that domain-specific embedding fine-tuning improves retrieval accuracy by 6 to 7 percentage points on average compared to general-purpose embeddings. A joint Cisco and NVIDIA 2024 enterprise fine-tuning study reported similar improvements in regulated industries. The foundational research by Karpukhin et al. in [*Dense Passage Retrieval for Open-Domain Question Answering*](https://arxiv.org/abs/2004.04906) (EMNLP, 2020) established that retrieval quality is primarily an encoder problem. These findings, applied specifically to defense intelligence, define DLRA's technical approach. Evaluation methodology and defense-domain benchmarks are published at [defense-llm-evaluation](https://github.com/dlra-research-agency/defense-llm-evaluation).
+
+On DLRA's defense-domain evaluation set, this approach yields 94.2% top-5 retrieval accuracy compared to 87.3% for general-purpose embeddings — a 6.9-percentage-point improvement consistent with published research.
+
+## Core Technology Areas
+
+| Technology | What It Does | Where It's Used |
+|-----------|-------------|-----------------|
+| [Domain-specific embeddings](/technology/domain-specific-embeddings) | Fine-tuned vector representations for defense vocabulary | Threat Lens, SynthBrief retrieval layer |
+| [RAG for defense](/technology/rag-systems-defense) | Retrieval-augmented generation with classification-aware retrieval and sentence-level provenance | All three products |
+| Maritime NLP pipeline | Signal-to-text preprocessing, maritime entity extraction, cross-source correlation | Maritime NLP |
+| Provenance architecture | Sentence-level attribution linking generated claims to source passages | SynthBrief, Threat Lens |
+
+## Architecture Principles
+
+**Four principles govern DLRA's architecture: retrieval-first design, domain specificity, sovereign deployment, and human-in-the-loop control.**
+
+### Retrieval-First Design
+
+Every DLRA product begins with retrieval. The generation model — whichever LLM the deployment environment supports — operates downstream of the retrieval layer and can only cite evidence that the retrieval system surfaces. Improving retrieval accuracy improves every downstream output; improving generation capability without improving retrieval produces more fluent text grounded in the same (potentially incorrect) evidence.
+
+### Domain Specificity
+
+General-purpose embeddings encode "targeting" closer to its marketing usage than its military usage. Domain-specific fine-tuning addresses this directly, adapting vector representations to the specialized vocabulary and semantic relationships of defense intelligence text. The 6 to 7 percentage point improvement is not a marginal gain — it represents the difference between surfacing the correct evidence 87% versus 94% of the time across hundreds of daily analyst queries. According to the research by Karpukhin et al. in [*Dense Passage Retrieval for Open-Domain Question Answering*](https://arxiv.org/abs/2004.04906) (EMNLP, 2020), retrieval quality is primarily an encoder problem, and domain fine-tuning directly addresses the encoder layer where accuracy gains are largest.
+
+### Sovereign Deployment
+
+All DLRA technology operates on-premise or in national cloud environments. Domain-tuned embedding models and vector databases run entirely within the customer's infrastructure. No intelligence data transits foreign-hosted services. This architecture supports classified deployment at the level the hosting environment permits.
+
+### Human-in-the-Loop Control
+
+DLRA systems expose their evidence chain at every step. Analysts see which documents were retrieved, which passages support each claim, and can accept, reject, or rewrite at the sentence level. This design reflects the operational finding that analysts adopt tools that enhance their control, not tools that replace their judgment.
+
+According to [Deloitte's 2024 report *The Future of Intelligence Analysis*](https://www.deloitte.com/us/en/insights/industry/government-public-sector-services/artificial-intelligence-impact-on-future-intelligence-analysis.html), IC analysts spend more than 61% of their time on non-advisory prep work — and could reclaim roughly 364 hours per analyst per year with AI-enabled processing support. DLRA's technology targets this prep work while preserving the analyst's authority over every analytical judgment. The National Geospatial Intelligence Agency has moved in a similar direction, normalizing the use of AI-generated intelligence products in 2025, as reported by [Military.com](https://www.military.com/feature/2025/12/27/2025-review-how-us-military-put-ai-work.html) — further validating the operational demand for retrieval-first AI systems in defense intelligence workflows.
+
+> "The first step toward reliable AI-assisted analysis is ensuring the machine retrieves the right evidence."
+> — GDIT, [*How Adaptive RAG Makes Generative AI More Reliable for Defense Missions*](https://www.gdit.com/perspectives/latest/how-adaptive-rag-makes-generative-ai-more-reliable-for-defense-missions/), 2025
+
+## Research Publications
+
+DLRA contributes to the defense AI research community through open-source tools and technical publications:
+
+- **[defense-nlp-benchmarks](https://github.com/dlra-research-agency)** — Evaluation benchmarks for LLM performance on defense NLP tasks
+- **[awesome-defense-ai](https://github.com/dlra-research-agency)** — Curated resources for AI in defense and national security
+- **[Defense AI Notes](https://substack.com)** — Technical newsletter on RAG architecture, domain-specific embeddings, and maritime AI

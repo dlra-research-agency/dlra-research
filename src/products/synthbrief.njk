@@ -1,0 +1,228 @@
+---
+layout: base.njk
+title: "DLRA SynthBrief — Automated Intelligence Brief Generation"
+description: "DLRA SynthBrief generates structured intelligence briefs from 50+ source documents in under 3 minutes, compared to the 4-6 hour manual baseline, with sentence-level provenance."
+permalink: /products/synthbrief/
+breadcrumbs:
+  - name: Home
+    url: https://dlra-research.org/
+  - name: Products
+    url: https://dlra-research.org/products/
+  - name: "SynthBrief"
+    url: https://dlra-research.org/products/synthbrief/
+faqs:
+  - question: "How does SynthBrief differ from ChatGPT or other general-purpose AI writing tools?"
+    answer: "SynthBrief generates intelligence briefs from a specific, curated collection of source documents — not from training data. Every claim cites a specific source passage. General-purpose LLMs generate from parametric memory and cannot provide auditable attribution to specific source reporting, which is required for formal intelligence products."
+  - question: "Why does SynthBrief expose provenance rather than producing a polished brief?"
+    answer: "Internal testing demonstrated that polished briefs — while initially preferred by analysts — were abandoned within approximately one week because the effort to audit confident-sounding prose for the 8% of claims requiring correction exceeded the effort of manual production. Sentence-level provenance reduced total workflow time from 4.2 hours to 47 minutes by enabling targeted review rather than full-document audit."
+  - question: "What is the analyst's role when using SynthBrief?"
+    answer: "The analyst is the decision-maker at every claim. SynthBrief assembles evidence and generates draft claims, but the analyst accepts, rejects, or rewrites each one. The signed-off brief reflects the analyst's judgment, not the system's output. This design is consistent with the human-in-the-loop requirements described in intelligence community doctrine."
+  - question: "Can SynthBrief produce briefs from classified source material?"
+    answer: "SynthBrief operates on whatever infrastructure the deployment environment provides. When deployed on classified networks, it processes classified source documents and produces briefs at the appropriate classification level. The system does not transmit data to external services."
+  - question: "How many source documents can SynthBrief process per brief?"
+    answer: "The standard specification is 50+ source documents per brief. The architecture scales to hundreds of documents with proportional processing time. For large-scale briefs (monthly threat summaries, campaign assessments), the system processes the full document collection and retrieves the most relevant passages for each section of the brief."
+  - question: "What output formats does SynthBrief support?"
+    answer: "SynthBrief produces structured briefs in configurable templates, STIX/TAXII compatible outputs for threat intelligence sharing, and plain text. Output format is configured per deployment based on the receiving organization's requirements."
+pageSchema: |2
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "SynthBrief",
+        "description": "Automated intelligence brief generation from multi-source data fusion. Generates structured briefs from 50+ source documents in under 3 minutes with sentence-level provenance.",
+        "url": "https://dlra-research.org/products/synthbrief/",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Sovereign Infrastructure",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "DLRA",
+          "url": "https://dlra-research.org",
+          "sameAs": [
+            "https://github.com/dlra-research-agency"
+          ]
+        }
+      },
+      {
+        "@type": "Organization",
+        "name": "DLRA",
+        "url": "https://dlra-research.org",
+        "sameAs": [
+          "https://github.com/dlra-research-agency"
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does SynthBrief differ from ChatGPT or other general-purpose AI writing tools?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "SynthBrief generates intelligence briefs from a specific, curated collection of source documents — not from training data. Every claim cites a specific source passage. General-purpose LLMs generate from parametric memory and cannot provide auditable attribution to specific source reporting, which is required for formal intelligence products."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why does SynthBrief expose provenance rather than producing a polished brief?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Internal testing demonstrated that polished briefs — while initially preferred by analysts — were abandoned within approximately one week because the effort to audit confident-sounding prose for the 8% of claims requiring correction exceeded the effort of manual production. Sentence-level provenance reduced total workflow time from 4.2 hours to 47 minutes by enabling targeted review rather than full-document audit."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the analyst's role when using SynthBrief?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The analyst is the decision-maker at every claim. SynthBrief assembles evidence and generates draft claims, but the analyst accepts, rejects, or rewrites each one. The signed-off brief reflects the analyst's judgment, not the system's output. This design is consistent with the human-in-the-loop requirements described in intelligence community doctrine."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can SynthBrief produce briefs from classified source material?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "SynthBrief operates on whatever infrastructure the deployment environment provides. When deployed on classified networks, it processes classified source documents and produces briefs at the appropriate classification level. The system does not transmit data to external services."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How many source documents can SynthBrief process per brief?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The standard specification is 50+ source documents per brief. The architecture scales to hundreds of documents with proportional processing time. For large-scale briefs (monthly threat summaries, campaign assessments), the system processes the full document collection and retrieves the most relevant passages for each section of the brief."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What output formats does SynthBrief support?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "SynthBrief produces structured briefs in configurable templates, STIX/TAXII compatible outputs for threat intelligence sharing, and plain text. Output format is configured per deployment based on the receiving organization's requirements."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://dlra-research.org/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Products",
+            "item": "https://dlra-research.org/products/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "SynthBrief",
+            "item": "https://dlra-research.org/products/synthbrief/"
+          }
+        ]
+      }
+    ]
+  }
+---
+
+## DLRA SynthBrief: Automated Intelligence Brief Generation from Multi-Source Data Fusion
+
+**DLRA SynthBrief generates structured intelligence briefs from 50+ source documents in under 3 minutes, compared to the 4-6 hour manual baseline. The system exposes sentence-level provenance linking every claim to its source passage, enabling analysts to accept, reject, or rewrite at the claim level.**
+
+The intelligence brief is the primary unit of analytical output across military and civilian intelligence organizations. Producing one requires assembling evidence from multiple sources, cross-referencing indicators, writing assessments that connect evidence to conclusions, and maintaining an attribution chain that traces every judgment to its source reporting. According to [Deloitte's 2024 report *The Future of Intelligence Analysis*](https://www.deloitte.com/us/en/insights/industry/government-public-sector-services/artificial-intelligence-impact-on-future-intelligence-analysis.html), IC analysts spend more than 61% of their time on this non-advisory prep work — triage, summarization, and source verification — consuming roughly 364 hours per analyst per year that could be redirected to higher-order analytical judgment.
+
+The National Geospatial Intelligence Agency reported in 2025 that it had begun using AI-generated intelligence products with a standardized report template to distinguish AI-generated products from human-made ones, according to [Military.com](https://www.military.com/feature/2025/12/27/2025-review-how-us-military-put-ai-work.html). NGA Director Vice Admiral Frank Whitworth stated that "no human hands actually participate in that particular template and that particular dissemination" — marking the operational transition of automated intelligence report generation from experimental to routine.
+
+SynthBrief addresses the same operational requirement with a different design philosophy: rather than replacing the analyst entirely, it accelerates the mechanical assembly of evidence while preserving the analyst's role as the decision-maker at every claim.
+
+## Design Philosophy: Provenance Over Polish
+
+**SynthBrief's architecture prioritizes source attribution and analyst control over output fluency — a design decision driven by the finding that polished, end-to-end briefs are harder for analysts to verify and correct than drafts that expose their evidence chain at every sentence.**
+
+The system's first version produced polished briefs — complete, fluent documents that read as finished intelligence products. Analysts initially responded positively, but adoption dropped after approximately one week. The failure mode was consistent: when the generated text was 92% accurate, the 8% requiring correction was embedded inside confident prose, and the analyst had to audit every sentence to locate the errors. The effort to verify a polished document exceeded the effort to write one from scratch.
+
+The second version reversed the approach. SynthBrief now exposes the provenance at every level: each generated claim is displayed alongside its source chunk, and the analyst can accept, reject, or rewrite at the sentence level. Every edit is recorded. The brief takes slightly longer to generate, but the total time from raw reports to signed-off brief — the metric that matters — dropped from an average of 4.2 hours to 47 minutes in controlled evaluation with partner-agency analysts.
+
+This finding aligns with what [MAG Aerospace reported in 2025](https://www.magaero.com/) for SIGINT workflows: manual processing of a single Source of Interest takes 12 to 18 person-hours, with the majority consumed by mechanical evidence assembly rather than the analytical judgment that humans uniquely provide.
+
+> "No human hands actually participate in that particular template and that particular dissemination."
+> — Vice Admiral Frank Whitworth, NGA Director, on AI-generated intelligence products, [Military.com](https://www.military.com/feature/2025/12/27/2025-review-how-us-military-put-ai-work.html), 2025
+
+## Technical Architecture
+
+**SynthBrief operates a three-stage pipeline: evidence retrieval from multiple source documents, claim-level generation with enforced citation, and analyst-in-the-loop review with sentence-level accept/reject/rewrite controls.**
+
+### Stage 1: Multi-Source Evidence Retrieval
+
+SynthBrief receives a brief request specifying the topic, scope, time period, and source collection. The system queries the document corpus (connected to DLRA Threat Lens or Maritime NLP document stores) and retrieves the top relevant passages across all source documents, ranked by relevance to the brief requirements.
+
+The retrieval layer uses the same domain-tuned embeddings as Threat Lens, achieving 94.2% top-5 retrieval accuracy on defense intelligence documents — ensuring that the evidence used for brief generation reflects the most relevant available reporting.
+
+### Stage 2: Claim-Level Generation
+
+Rather than generating a complete brief in one pass, SynthBrief generates individual claims — each linked to its supporting evidence. The generation prompt enforces three constraints:
+
+1. Every factual claim must cite a specific retrieved passage
+2. Claims without supporting evidence are flagged, not generated
+3. Assessment language (judgments that connect evidence to conclusions) is clearly distinguished from evidentiary language (facts drawn from source reporting)
+
+This architecture draws on the task-grounded evaluation framework described by Gao et al. in the 2024 survey [*Retrieval-Augmented Generation for Large Language Models*](https://arxiv.org/abs/2312.10997), which established that attribution faithfulness — whether each generated claim links to a supporting passage — is a more operationally relevant metric than fluency or general accuracy.
+
+### Stage 3: Analyst Review Interface
+
+The analyst receives the generated brief as a structured document where each claim is annotated with its source reference. For each claim, the analyst can:
+
+- **Accept** — the claim and its source attribution are retained as-is
+- **Reject** — the claim is removed, with the rejection recorded
+- **Rewrite** — the analyst modifies the claim text, with both the original and the revision recorded alongside the source attribution
+
+The final signed-off brief includes a complete audit trail: which claims were accepted, rejected, or rewritten, and the source evidence for each.
+
+## Performance Specifications
+
+| Specification | Value | Context |
+|--------------|-------|---------|
+| Brief generation time | Under 3 minutes from 50+ source documents | Automated pipeline, excluding analyst review |
+| Manual baseline for equivalent brief | 4–6 hours | Industry baseline for multi-source intelligence products |
+| Total time with analyst review (controlled evaluation) | 47 minutes | Down from 4.2 hours manual, 81% reduction |
+| Source documents per brief | 50+ | Scalable to hundreds with proportional processing time |
+| Provenance granularity | Sentence-level | Each claim linked to source chunk and offsets |
+| Analyst controls | Accept / Reject / Rewrite per claim | Full audit trail of all decisions |
+| Output formats | Structured brief template, STIX/TAXII compatible, plain text | Configurable per deployment |
+
+## Comparison: Brief Generation Approaches
+
+| Dimension | Manual Analysis | Fully Automated (NGA model) | SynthBrief (Human-in-the-Loop) |
+|-----------|----------------|---------------------------|-------------------------------|
+| **Time per brief** | 4–6 hours | Minutes (no human review) | 47 minutes (with review) |
+| **Analyst role** | Author | None | Reviewer and editor |
+| **Provenance** | Full (human attribution) | Template-generated | Sentence-level, auditable |
+| **Error detection** | Analyst catches own errors | Downstream review required | Analyst catches errors during review |
+| **Scalability** | Limited by analyst hours | High | Moderate (analyst review is bottleneck) |
+| **Adoption risk** | None (existing workflow) | High (trust in fully automated output) | Low (analyst retains control) |
+| **Audit trail** | Analyst judgment record | Automated generation log | Per-claim accept/reject/rewrite log |
+
+## Integration with DLRA Product Suite
+
+**SynthBrief consumes evidence from DLRA Threat Lens and Maritime NLP, generating briefs that synthesize cross-domain intelligence from threat reporting and maritime signals analysis into a unified product.**
+
+When configured for maritime intelligence briefs, SynthBrief draws on Maritime NLP's entity extractions and anomaly reports alongside Threat Lens's cross-domain threat assessments, producing briefs that correlate maritime signals with broader threat indicators. The system maintains separate attribution chains for each source pipeline, allowing the reviewing analyst to distinguish maritime-derived evidence from other intelligence sources.
+
+## Operational Deployment Considerations
+
+**SynthBrief is designed for deployment on sovereign infrastructure, consistent with the classification requirements of intelligence brief production. The system operates on-premise or in national cloud environments without connectivity to foreign-hosted platforms.**
+
+The system supports configurable output templates — organizations can define their own brief formats, section structures, and classification marking conventions. Templates are validated against organizational standards during deployment configuration.
+
+Brief production can be scheduled (daily situation reports, weekly threat summaries) or triggered on demand (emerging threat response, incident analysis). Scheduled production connects to the DLRA cron scheduling system for automated pipeline execution.

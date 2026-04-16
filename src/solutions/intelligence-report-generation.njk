@@ -1,0 +1,205 @@
+---
+layout: base.njk
+title: "Automated Intelligence Report Generation"
+description: "Automated intelligence report generation uses RAG to assemble evidence from multiple sources into structured briefs with per-claim attribution — compressing a 4-6 hour workflow to under an hour with analyst review."
+permalink: /solutions/intelligence-report-generation/
+breadcrumbs:
+  - name: Home
+    url: https://dlra-research.org/
+  - name: Solutions
+    url: https://dlra-research.org/solutions/
+  - name: "Intelligence Report Generation"
+    url: https://dlra-research.org/solutions/intelligence-report-generation/
+faqs:
+  - question: "How does automated report generation differ from asking ChatGPT to write a summary?"
+    answer: "Automated intelligence report generation retrieves evidence from a specific, curated collection of source documents and generates claims that cite those sources with sentence-level attribution. General-purpose LLMs generate from training data without auditable attribution to specific source reporting — a requirement for formal intelligence products."
+  - question: "Can automated reports replace human analysts?"
+    answer: "The NGA's 2025 deployment of fully automated intelligence products demonstrates that some product types can be generated without human review. For higher-stakes analytical products — threat assessments, warning reports, policy briefs — human review remains essential. DLRA SynthBrief is designed for the human-in-the-loop model, where the analyst reviews and approves every claim."
+  - question: "What is the 81% time reduction based on?"
+    answer: "DLRA's controlled evaluation measured total time from raw reports to signed-off brief. Manual production averaged 4.2 hours. SynthBrief with analyst review averaged 47 minutes — an 81% reduction. The evaluation used partner-agency analysts working on representative intelligence products."
+  - question: "How many source documents can the system process per brief?"
+    answer: "DLRA SynthBrief processes 50+ source documents per brief in under 3 minutes for the automated generation stage. The architecture scales to hundreds of documents with proportional processing time. Analyst review time depends on brief complexity, not source document count."
+  - question: "What output formats are supported?"
+    answer: "SynthBrief produces structured briefs in configurable templates, STIX/TAXII-compatible outputs for threat intelligence sharing, and plain text. Output format is configured per deployment based on organizational requirements."
+  - question: "How does the system handle disagreements between source documents?"
+    answer: "When source documents contain conflicting information, SynthBrief presents both claims with their respective source attributions, flagging the conflict for analyst resolution. The system does not attempt to resolve contradictions — that judgment remains with the analyst."
+pageSchema: |2
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "Automated Intelligence Report Generation",
+        "description": "Automated intelligence report generation uses RAG to assemble evidence from multiple sources into structured briefs with per-claim attribution — compressing a 4-6 hour workflow to under an hour with analyst review.",
+        "url": "https://dlra-research.org/solutions/intelligence-report-generation/",
+        "publisher": {
+          "@type": "Organization",
+          "name": "DLRA",
+          "url": "https://dlra-research.org"
+        }
+      },
+      {
+        "@type": "Organization",
+        "name": "DLRA",
+        "url": "https://dlra-research.org",
+        "sameAs": [
+          "https://github.com/dlra-research-agency"
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does automated report generation differ from asking ChatGPT to write a summary?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Automated intelligence report generation retrieves evidence from a specific, curated collection of source documents and generates claims that cite those sources with sentence-level attribution. General-purpose LLMs generate from training data without auditable attribution to specific source reporting — a requirement for formal intelligence products."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can automated reports replace human analysts?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The NGA's 2025 deployment of fully automated intelligence products demonstrates that some product types can be generated without human review. For higher-stakes analytical products — threat assessments, warning reports, policy briefs — human review remains essential. DLRA SynthBrief is designed for the human-in-the-loop model, where the analyst reviews and approves every claim."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the 81% time reduction based on?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "DLRA's controlled evaluation measured total time from raw reports to signed-off brief. Manual production averaged 4.2 hours. SynthBrief with analyst review averaged 47 minutes — an 81% reduction. The evaluation used partner-agency analysts working on representative intelligence products."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How many source documents can the system process per brief?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "DLRA SynthBrief processes 50+ source documents per brief in under 3 minutes for the automated generation stage. The architecture scales to hundreds of documents with proportional processing time. Analyst review time depends on brief complexity, not source document count."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What output formats are supported?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "SynthBrief produces structured briefs in configurable templates, STIX/TAXII-compatible outputs for threat intelligence sharing, and plain text. Output format is configured per deployment based on organizational requirements."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does the system handle disagreements between source documents?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "When source documents contain conflicting information, SynthBrief presents both claims with their respective source attributions, flagging the conflict for analyst resolution. The system does not attempt to resolve contradictions — that judgment remains with the analyst."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://dlra-research.org/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Solutions",
+            "item": "https://dlra-research.org/solutions/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Intelligence Report Generation",
+            "item": "https://dlra-research.org/solutions/intelligence-report-generation/"
+          }
+        ]
+      }
+    ]
+  }
+---
+
+## Automated Intelligence Report Generation with LLMs
+
+**Automated intelligence report generation uses retrieval-augmented generation to assemble evidence from multiple source documents into structured briefs with per-claim attribution — compressing a workflow that manually consumes 4 to 6 hours into a process where the analyst reviews and approves a machine-generated draft in under an hour. The critical design insight is that exposing provenance at the sentence level produces higher adoption than polished end-to-end output, because analysts can verify and edit individual claims without auditing the entire document.**
+
+The intelligence brief is the primary unit of analytical output in defense and national security organizations. Producing one manually requires reading dozens or hundreds of source reports, extracting relevant evidence, cross-referencing indicators, writing assessments that connect evidence to conclusions, and maintaining an attribution chain that traces every judgment to its source reporting.
+
+According to [Deloitte's 2024 report *The Future of Intelligence Analysis*](https://www.deloitte.com/us/en/insights/industry/government-public-sector-services/artificial-intelligence-impact-on-future-intelligence-analysis.html), IC analysts spend more than 61% of their time on this non-advisory prep work and could reclaim roughly 364 hours per analyst per year — more than 45 working days — with AI-enabled support. The National Geospatial Intelligence Agency took this a step further in 2025, deploying fully automated intelligence products using standardized report templates, according to [Military.com](https://www.military.com/feature/2025/12/27/2025-review-how-us-military-put-ai-work.html).
+
+## The Report Generation Challenge
+
+**Intelligence report production requires three capabilities that standard text generation does not provide: multi-document evidence assembly, auditable attribution, and the ability for human reviewers to selectively edit without losing the evidence chain.**
+
+### Multi-Document Evidence Assembly
+
+A typical intelligence brief synthesizes information from 10 to 100+ source documents — threat reports, signals intercepts, OSINT feeds, imagery analysis notes, and partner-nation contributions. The generation system must retrieve the most relevant passages across this collection and assemble them into a coherent narrative that addresses the brief's requirements.
+
+Standard summarization models operate on single documents. Multi-document synthesis for intelligence requires retrieval-augmented generation that queries across the full source collection, retrieves the most relevant evidence per section, and generates text that integrates claims from multiple sources while maintaining distinct attribution for each.
+
+### Auditable Attribution
+
+Every claim in a formal intelligence product must trace to source reporting. [DLRA SynthBrief](/products/synthbrief) is designed around this requirement. A generated sentence like "Vessel X was observed conducting a cargo transfer in Zone Y" must link to the specific report, paragraph, and (ideally) sentence that supports the claim. Without this attribution chain, the generated text cannot be used in formal intelligence products regardless of its accuracy.
+
+### Selective Human Review
+
+The analyst receiving a generated brief must be able to accept, reject, or rewrite individual claims without rebuilding the entire document. This requires a claim-level interface — not a document-level editor — where each generated statement is independently reviewable and modifiable.
+
+## Approaches to Automated Report Generation
+
+**Four approaches to automated report generation — template-based, fully automated, human-in-the-loop, and assisted drafting — differ in generation quality, attribution capability, analyst control, and adoption patterns. The following comparison summarizes the trade-offs.**
+
+| Approach | Description | Strengths | Limitations |
+|----------|------------|-----------|-------------|
+| **Template-based generation** | Pre-defined templates with AI-populated fields | Consistent format, predictable output | Rigid; cannot adapt to novel reporting |
+| **Fully automated (NGA model)** | End-to-end AI generation with standardized templates | Maximum speed, no human bottleneck | No human review before dissemination; trust requirements high |
+| **Human-in-the-loop RAG (SynthBrief model)** | AI generates claims with provenance; analyst reviews per claim | Combines speed with analyst control; auditable | Analyst review time is the bottleneck (~47 minutes) |
+| **Assisted drafting** | AI suggests passages; analyst writes the brief | Highest analyst control | Slowest; minimal time savings |
+
+## The Provenance Design Decision
+
+**The choice between polished output and provenance-exposed output determines whether analysts adopt the tool beyond the first week. Polished briefs are harder to verify than structured drafts that show their evidence chain at every sentence.**
+
+DLRA SynthBrief's development history illustrates this design trade-off directly. The first version produced polished, fluent briefs. Analyst adoption dropped after approximately one week because the effort to audit confident-sounding prose — locating the estimated 8% of claims requiring correction within a document that appeared complete — exceeded the effort of manual production.
+
+The second version exposed sentence-level provenance: each generated claim displayed alongside its source chunk, with accept/reject/rewrite controls per claim. Total time from raw reports to signed-off brief dropped from 4.2 hours to 47 minutes in controlled evaluation with partner-agency analysts — an 81% reduction.
+
+This finding is consistent with the broader research on human-AI interaction in high-stakes domains. When the cost of error is high, users need to verify AI output efficiently. Exposing the evidence chain enables targeted verification rather than full-document audit.
+
+> "No human hands actually participate in that particular template and that particular dissemination."
+> — Vice Admiral Frank Whitworth, NGA Director, on fully automated intelligence products, [Military.com](https://www.military.com/feature/2025/12/27/2025-review-how-us-military-put-ai-work.html), 2025
+
+## Performance Benchmarks
+
+| Metric | Manual Production | SynthBrief (with analyst review) | Fully Automated (NGA model) |
+|--------|-------------------|----------------------------------|----------------------------|
+| Time to finished brief | 4–6 hours | 47 minutes | Minutes |
+| Source documents processed | Limited by analyst capacity | 50+ per brief | Varies by template |
+| Attribution granularity | Full (analyst-maintained) | Sentence-level (system-maintained) | Template-defined |
+| Error detection | Analyst self-review | Per-claim analyst review | Downstream review required |
+| Analyst control | Complete | Per-claim accept/reject/rewrite | None (post-hoc review only) |
+| Audit trail | Analyst judgment record | Per-claim decision log | Automated generation log |
+| Scalability | Limited by headcount | Moderate (review bottleneck) | High |
+
+## The Retrieval Foundation
+
+**Report generation quality depends entirely on retrieval accuracy. A generation system that assembles evidence from incorrectly retrieved passages produces briefs that are fluent but wrong — the most dangerous failure mode in intelligence analysis.**
+
+Domain-specific embedding fine-tuning improves retrieval accuracy from approximately 87% to 94% on defense intelligence benchmarks, according to research by Voyage AI (2024) and Cisco/NVIDIA (2024). DLRA SynthBrief uses the same domain-tuned retrieval layer as Threat Lens (94.2% top-5 retrieval accuracy) to ensure that the evidence assembled for each brief reflects the most relevant available reporting.
+
+The research by Karpukhin et al. in their 2020 paper [*Dense Passage Retrieval for Open-Domain Question Answering*](https://arxiv.org/abs/2004.04906) established that retrieval quality is primarily an encoder problem. For report generation, this means that investing in embedding fine-tuning yields larger quality improvements than investing in a more capable generation model — the generation model can only cite evidence that the retrieval layer surfaces.
+
+## Integration with Intelligence Workflows
+
+**Automated report generation connects to existing intelligence workflows at defined integration points: document ingestion pipelines (receiving source reporting), analyst workstations (review interface), and dissemination systems (publishing finished products).**
+
+DLRA SynthBrief integrates with Threat Lens (for cross-domain threat assessment evidence) and Maritime NLP (for maritime-domain evidence), enabling briefs that synthesize across intelligence domains. The system supports configurable output templates, STIX/TAXII-compatible formats for threat intelligence sharing, and plain text for conventional dissemination.
+
+Scheduled production (daily situation reports, weekly threat summaries) connects to cron scheduling for automated pipeline execution. On-demand production (emerging threat response, incident analysis) is triggered directly by analyst request.

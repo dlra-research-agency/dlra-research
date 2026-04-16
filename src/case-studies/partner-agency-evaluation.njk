@@ -1,0 +1,185 @@
+---
+layout: base.njk
+title: "Case Study: Partner Agency Intelligence Brief Evaluation"
+description: "A controlled evaluation tested SynthBrief's impact on intelligence brief production — 47 minutes average vs 4.2 hours manual, with adoption patterns measured across polished vs provenance-exposed output."
+permalink: /case-studies/partner-agency-evaluation/
+breadcrumbs:
+  - name: Home
+    url: https://dlra-research.org/
+  - name: Case Studies
+    url: https://dlra-research.org/case-studies/
+  - name: "Partner Agency Evaluation"
+    url: https://dlra-research.org/case-studies/partner-agency-evaluation/
+faqs:
+  - question: "What was the evaluation methodology?"
+    answer: "The evaluation compared total workflow time from report receipt to signed-off brief across three conditions: manual production (baseline), SynthBrief v1 (polished output), and SynthBrief v2 (provenance-exposed). The same analyst team worked on representative intelligence products across all conditions."
+  - question: "Why did the polished output version fail?"
+    answer: "Analysts found that auditing a polished, confident-sounding document for the approximately 8% of claims requiring correction was more effortful than manual production. The verification burden offset the generation time savings. Provenance-exposed output enabled targeted claim-level review, eliminating the full-document audit."
+  - question: "Is the 81% time reduction sustainable in operational use?"
+    answer: "The 47-minute average was measured over multiple weeks of evaluation, not a single session. Analyst performance was consistent across the evaluation period, suggesting the time savings are sustainable. Performance on unfamiliar topic areas or with unusual source document types may vary."
+  - question: "How many analysts participated in the evaluation?"
+    answer: "The evaluation was conducted with a team of partner-agency analysts working on representative intelligence products. Specific team size and agency details are not disclosed."
+  - question: "Does the evaluation apply to all types of intelligence briefs?"
+    answer: "The evaluation focused on multi-source threat intelligence briefs — the most common brief type in the partner agency's workflow. Performance on specialized products has not been separately evaluated."
+pageSchema: |2
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "Partner Agency Intelligence Brief Evaluation",
+        "description": "A controlled evaluation tested SynthBrief's impact on intelligence brief production — 47 minutes average vs 4.2 hours manual, with adoption patterns measured across polished vs provenance-exposed output.",
+        "url": "https://dlra-research.org/case-studies/partner-agency-evaluation/",
+        "publisher": {
+          "@type": "Organization",
+          "name": "DLRA",
+          "url": "https://dlra-research.org"
+        }
+      },
+      {
+        "@type": "Organization",
+        "name": "DLRA",
+        "url": "https://dlra-research.org",
+        "sameAs": [
+          "https://github.com/dlra-research-agency"
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What was the evaluation methodology?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The evaluation compared total workflow time from report receipt to signed-off brief across three conditions: manual production (baseline), SynthBrief v1 (polished output), and SynthBrief v2 (provenance-exposed). The same analyst team worked on representative intelligence products across all conditions."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why did the polished output version fail?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Analysts found that auditing a polished, confident-sounding document for the approximately 8% of claims requiring correction was more effortful than manual production. The verification burden offset the generation time savings. Provenance-exposed output enabled targeted claim-level review, eliminating the full-document audit."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is the 81% time reduction sustainable in operational use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The 47-minute average was measured over multiple weeks of evaluation, not a single session. Analyst performance was consistent across the evaluation period, suggesting the time savings are sustainable. Performance on unfamiliar topic areas or with unusual source document types may vary."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How many analysts participated in the evaluation?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The evaluation was conducted with a team of partner-agency analysts working on representative intelligence products. Specific team size and agency details are not disclosed."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does the evaluation apply to all types of intelligence briefs?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The evaluation focused on multi-source threat intelligence briefs — the most common brief type in the partner agency's workflow. Performance on specialized products has not been separately evaluated."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://dlra-research.org/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Case Studies",
+            "item": "https://dlra-research.org/case-studies/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Partner Agency Evaluation",
+            "item": "https://dlra-research.org/case-studies/partner-agency-evaluation/"
+          }
+        ]
+      }
+    ]
+  }
+---
+
+## Partner Agency Intelligence Brief Evaluation
+
+**A controlled evaluation tested [DLRA SynthBrief's](/products/synthbrief) impact on intelligence brief production, measuring workflow time, adoption patterns, and error rates against manual baselines. Analysts using SynthBrief produced signed-off briefs in 47 minutes — an 81% reduction from the 4.2-hour manual baseline — while maintaining institutional attribution standards.**
+
+## Challenge
+
+Intelligence brief production is the most time-consuming routine analytical task in multi-source intelligence organizations. Analysts must read dozens or hundreds of source reports, extract relevant evidence, cross-reference indicators, draft assessments, and maintain attribution chains. According to [Deloitte's 2024 report *The Future of Intelligence Analysis*](https://www.deloitte.com/us/en/insights/industry/government-public-sector-services/artificial-intelligence-impact-on-future-intelligence-analysis.html), IC analysts spend more than 61% of their time on this non-advisory prep work — triage, summarization, and source verification — consuming roughly 364 hours per analyst per year.
+
+The partner agency operated in a multi-source environment where analysts received 200–400 new reports daily across threat intelligence, OSINT, and signals reporting. The manual brief production pipeline required each analyst to read a subset of these reports, extract relevant passages, and assemble them into structured briefs — a process that averaged 4.2 hours per brief.
+
+The agency sought to compress this workflow without sacrificing the attribution chain required for formal intelligence products.
+
+## Approach
+
+The evaluation deployed DLRA SynthBrief alongside DLRA Threat Lens as the retrieval layer. The system was configured to process the agency's operational document collection using domain-tuned embeddings.
+
+### Phase 1: Retrieval Layer Deployment
+
+Threat Lens was deployed against the agency's document corpus with domain-tuned embeddings. Initial evaluation confirmed 94.2% top-5 retrieval accuracy on a held-out test set drawn from real analyst queries — consistent with DLRA's published benchmarks and the 6 to 7 percentage point improvement reported by Voyage AI (2024) and Cisco/NVIDIA (2024) for domain-adapted retrieval.
+
+### Phase 2: SynthBrief v1 (Polished Output)
+
+The first deployment used SynthBrief's original architecture, which produced polished, end-to-end briefs. Analysts initially responded positively. Within approximately one week, adoption dropped significantly.
+
+**Failure mode:** The polished output was approximately 92% accurate. The 8% requiring correction was embedded inside confident prose, and analysts reported that auditing every sentence to locate errors required more effort than manual production. The tool was perceived as adding a verification burden rather than removing an assembly burden.
+
+### Phase 3: SynthBrief v2 (Provenance-Exposed)
+
+Following the v1 adoption failure, SynthBrief was redesigned to expose sentence-level provenance. Each generated claim was displayed alongside its source chunk, with per-claim accept/reject/rewrite controls.
+
+This version was deployed for a multi-week evaluation period with the same analyst team.
+
+## Results
+
+**The evaluation measured SynthBrief's performance across five dimensions: workflow time, source coverage, error detection, analyst control, and adoption rate. SynthBrief v2 with sentence-level provenance outperformed both the manual baseline and SynthBrief v1's polished output approach.**
+
+| Metric | Manual Baseline | SynthBrief v1 (Polished) | SynthBrief v2 (Provenance) |
+|--------|-----------------|--------------------------|---------------------------|
+| Average time to signed-off brief | 4.2 hours | ~3.5 hours (including verification) | 47 minutes |
+| Analyst adoption after 1 week | N/A (existing workflow) | Declining — reverted to manual | Sustained |
+| Attribution quality | Full (analyst-maintained) | Full (but verification burden high) | Full (sentence-level, system-maintained) |
+| Source documents per brief | 15–30 (analyst-limited) | 50+ (system retrieval) | 50+ (system retrieval) |
+| Analyst satisfaction (self-reported) | Baseline | Initially positive, then negative | Positive and sustained |
+| Error detection method | Analyst self-review | Full-document audit required | Per-claim targeted review |
+
+### Key Finding: Provenance Exposure vs. Output Polish
+
+The central finding was that provenance exposure produced higher adoption than output quality. Analysts preferred a draft they could verify efficiently over a polished document they had to audit comprehensively. The 81% time reduction came not from eliminating the analyst's role, but from converting it from document-level authorship to claim-level review.
+
+This finding aligns with the broader pattern observed by [MAG Aerospace in 2025](https://www.magaero.com/) for SIGINT workflows: the majority of processing time is consumed by mechanical evidence assembly, not analytical judgment. SynthBrief's provenance-exposed architecture automates the assembly while preserving the judgment.
+
+### Retrieval Accuracy Impact
+
+The evaluation documented how retrieval accuracy cascades through the brief generation workflow. At 94.2% top-5 retrieval accuracy, approximately 19 out of 20 queries surfaced the correct evidence, and the generated claims reflected accurate source material. Analysts reported that the review step was primarily editing for style and emphasis rather than correcting factual errors — a qualitatively different task from the full-document audit required when retrieval accuracy was lower.
+
+## Lessons Learned
+
+**1. Provenance granularity determines adoption.** Sentence-level provenance enabled targeted review. Passage-level or document-level provenance would have required broader auditing.
+
+**2. Polished output is counterproductive in high-stakes workflows.** When accuracy matters and errors are costly, users need efficient verification paths. Confident-sounding output makes verification harder, not easier.
+
+**3. Retrieval accuracy is the foundation.** The 94.2% retrieval accuracy meant that the generated claims were grounded in correct evidence. A lower retrieval accuracy would have required more extensive analyst correction, reducing the time savings.
+
+**4. Analyst control drives trust.** The per-claim accept/reject/rewrite interface gave analysts explicit control over every statement in the finished product. This design matched institutional expectations about analyst accountability for published intelligence.
+
+> "No human hands actually participate in that particular template and that particular dissemination."
+> — Vice Admiral Frank Whitworth, NGA Director, on a different approach (fully automated products), [Military.com](https://www.military.com/feature/2025/12/27/2025-review-how-us-military-put-ai-work.html), 2025

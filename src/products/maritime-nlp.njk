@@ -1,0 +1,205 @@
+---
+layout: base.njk
+title: "DLRA Maritime NLP — LLM Pipeline for Maritime Signals Analysis"
+description: "DLRA Maritime NLP is a language model pipeline for maritime signals analysis, vessel tracking correlation, and anomaly detection processing over 300,000 AIS messages daily."
+permalink: /products/maritime-nlp/
+breadcrumbs:
+  - name: Home
+    url: https://dlra-research.org/
+  - name: Products
+    url: https://dlra-research.org/products/
+  - name: "Maritime NLP"
+    url: https://dlra-research.org/products/maritime-nlp/
+faqs:
+  - question: "What types of maritime data does Maritime NLP process?"
+    answer: "The system processes AIS messages (300,000+ daily per deployment), signals intercepts, maritime radio transcripts, port state control reports, maritime incident records, and open-source maritime reporting. It does not process satellite imagery or radar data directly — those are handled by complementary systems whose outputs Maritime NLP correlates with text-based intelligence."
+  - question: "How does Maritime NLP detect AIS spoofing?"
+    answer: "The system cross-references vessel positions reported via AIS against signals intercepts, satellite imagery reports, and historical behavior patterns. When discrepancies emerge — a vessel reported at one position by AIS but observed elsewhere by satellite, or a transponder pattern consistent with known spoofing techniques — the system flags the anomaly for analyst review."
+  - question: "What is the 40% triage time reduction based on?"
+    answer: "The metric comes from controlled testing where analysts triaging maritime threat reports using Maritime NLP were compared against analysts using manual processes on the same report sets. The reduction applies to the time from report receipt to initial triage disposition — not to the full analytical workflow."
+  - question: "Can Maritime NLP operate on sovereign infrastructure?"
+    answer: "Maritime NLP is designed for deployment on national infrastructure. Maritime signals intelligence is among the most sovereignty-sensitive intelligence categories, and the system does not require connectivity to foreign-hosted cloud platforms."
+  - question: "How does Maritime NLP handle multilingual maritime communications?"
+    answer: "The preprocessing layer includes language identification and translation for common maritime communication languages. Entity extraction operates on the translated text, with the original-language source preserved for analyst verification."
+  - question: "What is the relationship between Maritime NLP and the other DLRA products?"
+    answer: "Maritime NLP handles the signal-to-text and entity extraction layers for maritime data. Extracted entities and anomaly reports flow into Threat Lens for cross-domain correlation and into SynthBrief for automated brief generation. The three products form a pipeline from raw maritime signals to finished intelligence products."
+pageSchema: |2
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Maritime NLP",
+        "description": "Language model pipeline for maritime signals analysis, vessel tracking correlation, and anomaly detection processing over 300,000 AIS messages daily.",
+        "url": "https://dlra-research.org/products/maritime-nlp/",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Sovereign Infrastructure",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "DLRA",
+          "url": "https://dlra-research.org",
+          "sameAs": [
+            "https://github.com/dlra-research-agency"
+          ]
+        }
+      },
+      {
+        "@type": "Organization",
+        "name": "DLRA",
+        "url": "https://dlra-research.org",
+        "sameAs": [
+          "https://github.com/dlra-research-agency"
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What types of maritime data does Maritime NLP process?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The system processes AIS messages (300,000+ daily per deployment), signals intercepts, maritime radio transcripts, port state control reports, maritime incident records, and open-source maritime reporting. It does not process satellite imagery or radar data directly — those are handled by complementary systems whose outputs Maritime NLP correlates with text-based intelligence."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does Maritime NLP detect AIS spoofing?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The system cross-references vessel positions reported via AIS against signals intercepts, satellite imagery reports, and historical behavior patterns. When discrepancies emerge — a vessel reported at one position by AIS but observed elsewhere by satellite, or a transponder pattern consistent with known spoofing techniques — the system flags the anomaly for analyst review."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the 40% triage time reduction based on?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The metric comes from controlled testing where analysts triaging maritime threat reports using Maritime NLP were compared against analysts using manual processes on the same report sets. The reduction applies to the time from report receipt to initial triage disposition — not to the full analytical workflow."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can Maritime NLP operate on sovereign infrastructure?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Maritime NLP is designed for deployment on national infrastructure. Maritime signals intelligence is among the most sovereignty-sensitive intelligence categories, and the system does not require connectivity to foreign-hosted cloud platforms."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does Maritime NLP handle multilingual maritime communications?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The preprocessing layer includes language identification and translation for common maritime communication languages. Entity extraction operates on the translated text, with the original-language source preserved for analyst verification."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the relationship between Maritime NLP and the other DLRA products?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Maritime NLP handles the signal-to-text and entity extraction layers for maritime data. Extracted entities and anomaly reports flow into Threat Lens for cross-domain correlation and into SynthBrief for automated brief generation. The three products form a pipeline from raw maritime signals to finished intelligence products."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://dlra-research.org/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Products",
+            "item": "https://dlra-research.org/products/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Maritime NLP",
+            "item": "https://dlra-research.org/products/maritime-nlp/"
+          }
+        ]
+      }
+    ]
+  }
+---
+
+## DLRA Maritime NLP: Language Model Pipeline for Maritime Domain Awareness
+
+**DLRA Maritime NLP is a language model pipeline for maritime signals analysis, vessel tracking correlation, and anomaly detection. The system processes over 300,000 AIS messages daily and reduced maritime threat report triage time by 40% in controlled testing, applying domain-tuned NLP where signal-to-noise ratios exceed manual analysis capacity.**
+
+Maritime domain awareness has evolved beyond traditional AIS tracking into a multimodal intelligence discipline that fuses vessel transponder data, satellite imagery, signals intercepts, and open-source maritime reporting. According to the U.S. Naval Institute's September 2025 [*Proceedings*](https://www.usni.org/magazines/proceedings/2025/september/move-beyond-ais-maritime-domain-awareness), effective maritime domain awareness now requires moving beyond AIS as a primary data source, integrating diverse signals to identify vessels that deliberately evade detection.
+
+A 2024 comprehensive study published in [*Information* (MDPI)](https://www.mdpi.com/2078-2489/16/8/658) found that artificial intelligence in maritime security faces challenges including data integration across heterogeneous sources, anomaly detection in high-volume data streams, and the need for real-time processing of vessel behavior patterns. Maritime NLP addresses the text-processing component of this challenge — analyzing maritime communications, signals intercepts, port state reports, and maritime incident records that arrive as unstructured or semi-structured text.
+
+## The Maritime Data Challenge
+
+**The maritime environment generates data at a volume and velocity that overwhelms manual analysis: over 500,000 vessels broadcast AIS positions globally, producing billions of data points per month, while maritime incident reports, signals intercepts, and OSINT feeds add thousands of unstructured text documents daily per operational theater.**
+
+AIS spoofing has increased over 200% since 2022, according to [Planet Labs](https://www.planet.com/pulse/illuminate-the-dark-fleet-with-planet-maritime-domain-awareness/), creating a maritime environment where the transponder data itself cannot be trusted at face value. Detecting the "dark fleet" — vessels that disable or spoof their transponders to evade sanctions, conduct illicit transfers, or avoid detection — requires cross-referencing AIS data against signals intelligence, satellite imagery, and maritime reporting.
+
+By 2024, maritime intelligence platforms like Windward had moved beyond traditional risk modeling into discovering "unknown unknowns," according to [Windward's analysis](https://windward.ai/knowledge-base/the-future-of-maritime-intelligence-from-awareness-to-action-to-automation/) — training AI models to translate anomalous behavior into predictive risk indicators tied to patterns of sanctions evasion, smuggling, and illegal fishing.
+
+The text-processing layer — analyzing signals transcripts, maritime incident reports, and inter-agency communications — is where NLP capabilities are critical and where general-purpose language models underperform due to the specialized vocabulary of maritime operations.
+
+## Technical Architecture
+
+**Maritime NLP operates a three-layer pipeline: signal-to-text preprocessing, entity extraction and correlation, and anomaly-contextualized reporting — each layer optimized for the specific data types and vocabulary of maritime intelligence.**
+
+### Layer 1: Signal-to-Text Preprocessing
+
+Raw maritime communications and signals intercepts arrive in heterogeneous formats — plain text transcripts, semi-structured radio logs, coded messages, and port state control reports. The preprocessing layer normalizes these into a unified text format, handling maritime-specific conventions: call signs, Maritime Mobile Service Identity (MMSI) numbers, port codes, vessel classification codes, and navigational terminology.
+
+This layer also handles temporal alignment — correlating a signals intercept timestamp with the corresponding AIS position, satellite imagery pass, and any concurrent maritime incident reports. Temporal correlation is essential because maritime anomalies are time-sensitive: a vessel that disables its transponder for 6 hours in a known transshipment zone is a different intelligence signal than one that loses connectivity due to equipment failure.
+
+### Layer 2: Entity Extraction and Correlation
+
+The NLP engine extracts maritime-specific entities from processed text: vessel names and identifiers, port facilities, geographic coordinates, cargo descriptions, personnel names, organizational affiliations, and threat indicators. Entity resolution handles the aliases and transliterations common in maritime reporting — the same vessel may appear under different names, flags, or MMSI numbers across different sources.
+
+Cross-source correlation links entities across AIS data, signals transcripts, and textual reporting. When a vessel identified in a signals intercept matches an AIS track that shows anomalous behavior (prolonged dark periods, unexpected port calls, speed patterns inconsistent with declared cargo), the system surfaces the correlation as an intelligence lead.
+
+### Layer 3: Anomaly-Contextualized Reporting
+
+Maritime NLP generates structured reports that contextualize detected anomalies against historical patterns and current intelligence. Each report includes the anomaly description, supporting evidence from multiple sources (with per-claim attribution), historical behavior comparison, and risk assessment.
+
+According to [MAG Aerospace's 2025 SIGINT workflow study](https://www.magaero.com/), manual processing of a single Source of Interest takes 12 to 18 person-hours, with the majority consumed by mechanical evidence assembly. Maritime NLP compresses this assembly step for maritime-domain Sources of Interest, allowing analysts to focus on the analytical judgment that automated systems cannot replace.
+
+## Performance Specifications
+
+| Specification | Value | Context |
+|--------------|-------|---------|
+| Daily AIS message processing | 300,000+ messages per deployment | Real-time stream processing |
+| Maritime threat report triage time reduction | 40% | Controlled testing against manual baseline |
+| Entity types extracted | Vessels, ports, coordinates, cargo, personnel, organizations, threat indicators | Maritime-specific entity model |
+| Signal-to-text formats supported | Plain text transcripts, radio logs, port state reports, coded messages | Maritime communication types |
+| Temporal correlation window | Configurable (default: 6 hours) | AIS-to-signal alignment |
+| Anomaly detection categories | Dark period, route deviation, transshipment pattern, sanctions evasion, AIS spoofing | Maritime-specific anomaly taxonomy |
+
+## Operational Context
+
+**Maritime NLP operates within a broader maritime domain awareness ecosystem that includes satellite imagery, radar, and AIS tracking. The system's role is to process the text-based intelligence that other sensors cannot capture — communications, reports, and open-source maritime data.**
+
+A 2025 study on [AIS data-driven maritime monitoring based on transformer architectures](https://arxiv.org/html/2505.07374v1) found that deep learning models including convolutional neural networks, recurrent neural networks, and transformers have demonstrated strong capabilities for processing AIS data. Maritime NLP complements these approaches by handling the unstructured text dimension — the signals transcripts, incident reports, and inter-agency communications that carry context no numerical model can extract.
+
+Research published in [*Sensors* (MDPI)](https://pmc.ncbi.nlm.nih.gov/articles/PMC11945802/) demonstrated that AI-enabled acoustic buoys achieved precision, recall, and F1 scores of 98% for vessel detection. Maritime NLP integrates acoustic detection alerts as input events, correlating them with textual reporting and AIS data to build comprehensive situational awareness.
+
+> "Geospatial AI is emerging as a robust complement, combining data from satellite imagery, AIS, and radar to form a comprehensive view of maritime activities, detecting anomalies and tracking dark vessels."
+> — Maritime Fairtrade, [*Navigating the Future: AI Applications and Challenges in Maritime Surveillance*](https://maritimefairtrade.org/navigating-the-future-ai-applications-and-challenges-in-maritime-surveillance/), 2025
+
+## Integration with DLRA Product Suite
+
+**Maritime NLP feeds extracted entities and anomaly reports into DLRA Threat Lens for cross-domain threat assessment, and DLRA SynthBrief for automated maritime intelligence brief generation — enabling end-to-end processing from raw maritime signals to finished intelligence product.**
+
+When Maritime NLP detects an anomaly — a vessel with AIS dark periods correlating with a signals intercept mentioning an illicit cargo transfer — the extracted entities and evidence chain feed directly into Threat Lens for correlation against the broader threat picture, and into SynthBrief for inclusion in the next scheduled maritime intelligence brief.
