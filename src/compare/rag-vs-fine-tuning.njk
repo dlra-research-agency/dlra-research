@@ -99,6 +99,12 @@ pageSchema: |2
 
 **RAG grounds language model outputs in specific source documents with auditable attribution, while fine-tuning adapts the model's parametric knowledge to a domain. For defense intelligence requiring traceable evidence chains, RAG dominates — but embedding fine-tuning within the RAG pipeline combines both strengths, achieving 94.2% retrieval accuracy compared to 87.3% for untuned baselines.**
 
+
+<blockquote>
+  <p>"RAG and fine-tuning combined consistently outperform either approach alone — but for applications where knowledge must be traceable to specific documents, retrieval-augmented generation is not optional. It is the only architecture that provides the attribution chain that high-stakes decisions require."</p>
+</blockquote>
+
+
 The choice between RAG and fine-tuning is the most consequential architectural decision for any defense AI system that processes intelligence documents (see also [how RAG systems work for defense applications](/technology/rag-systems-defense)). The decision determines whether generated outputs are grounded in citable source material (RAG) or drawn from the model's internalized knowledge (fine-tuning) — a distinction with direct implications for attribution, auditability, and institutional trust.
 
 Lewis et al. introduced retrieval-augmented generation in their 2020 NeurIPS paper [*Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks*](https://arxiv.org/abs/2005.11401), demonstrating that coupling a pre-trained model with an external retrieval mechanism improved factual accuracy on knowledge-intensive tasks. The 2024 survey by Gao et al., [*Retrieval-Augmented Generation for Large Language Models*](https://arxiv.org/abs/2312.10997), documented the subsequent evolution of RAG architectures and their growing adoption in enterprise and government applications.
