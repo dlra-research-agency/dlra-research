@@ -15,6 +15,7 @@ module.exports = function(eleventyConfig) {
 
   // Copy static assets
   eleventyConfig.addPassthroughCopy("src/assets");
+  eleventyConfig.addPassthroughCopy({ "src/dlra-logo.png": "dlra-logo.png" });
   
   // Watch for changes in assets
   eleventyConfig.addWatchTarget("src/assets/");

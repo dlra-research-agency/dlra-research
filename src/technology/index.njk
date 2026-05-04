@@ -1,4 +1,5 @@
 ---
+
 layout: base.njk
 title: "DLRA Technology Overview"
 description: "DLRA technical approach to defense AI — domain-tuned embeddings, schema-aware chunking, and sentence-level provenance for intelligence applications."
@@ -25,13 +26,27 @@ pageSchema: |2
     "@graph": [
       {
         "@type": "TechArticle",
+        "@id": "https://dlra-research.org/technology/#article",
         "headline": "DLRA Technology Overview",
         "description": "DLRA's technology stack is built on one finding: for domain-specific intelligence applications, retrieval accuracy — not model size — determines system performance.",
         "url": "https://dlra-research.org/technology/",
-        "publisher": {
+        "mainEntityOfPage": "https://dlra-research.org/technology/",
+        "datePublished": "2026-04-01",
+        "dateModified": "2026-04-28",
+        "image": "https://dlra-research.org/dlra-logo.png",
+        "author": {
           "@type": "Organization",
           "name": "DLRA",
           "url": "https://dlra-research.org"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "DLRA",
+          "url": "https://dlra-research.org",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://dlra-research.org/dlra-logo.png"
+          }
         }
       },
       {
