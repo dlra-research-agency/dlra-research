@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "eleventy --serve",
     "build": "eleventy",
-    "clean": "rm -rf _site"
+    "clean": "rm -rf _site",
+    "deploy": "npm run build && wrangler deploy",
+    "preview": "npm run build && wrangler dev"
   },
   "keywords": [
     "11ty",
@@ -15,6 +17,7 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.1"
+    "@11ty/eleventy": "^2.0.1",
+    "wrangler": "^4.87.0"
   }
 }
