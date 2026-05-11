@@ -6,6 +6,12 @@
   <title>{{ title }} | {{ site.name }}</title>
   <meta name="description" content="{{ description or site.description }}">
 
+  {% if canonical %}
+  <link rel="canonical" href="{{ canonical }}">
+  {% else %}
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+  {% endif %}
+
   <!-- Theme color -->
   <meta name="theme-color" content="#0f1629">
 
